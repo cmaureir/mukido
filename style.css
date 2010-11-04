@@ -83,12 +83,12 @@ table, table td {
 }
 	#content .aside {
 		float:left;
-		width:180px;
+		width:225px;
 		margin-right:47px;
 	}
 	#content .mainContent {
 		float:left;
-		width:650px;
+		width:618px;
 		background:url(images/line-hor.gif) 0 0 repeat-x;
 		padding:20px 0 0 0;
 	}
