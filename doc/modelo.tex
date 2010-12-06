@@ -1,0 +1,146 @@
+\documentclass[letter, 10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[dvips]{graphicx}
+\usepackage{subfigure}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage[top=1cm,bottom=1cm,left=1.5cm,right=1.5cm,footskip=1.5cm,headheight=1.5cm,headsep=.5cm,textheight=3cm]{geometry}
+
+\definecolor{red}{rgb}{1,0,0}
+\definecolor{green}{rgb}{0,1,0}
+\definecolor{blue}{rgb}{0,0,1}
+\newcommand{\blue}{\textcolor{blue}}
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\green}{\textcolor{green}}
+
+
+\begin{document}
+
+\title{Modelo de Base de Datos\\ \large{Mu Ki Do}}
+\author{Cristián D. Maureira Fredes.}
+\date{\today}
+\maketitle
+
+\section{Introducción}
+........
+
+
+\section{Tablas}
+
+\footnotesize{
+\begin{tabular}{ccc}
+	\begin{tabular}[t]{|c|c|c|}
+		\hline
+		\multicolumn{3}{|c|}{\textbf{Alumno}}\\\hline
+		\textbf{Atributo} & \textbf{Tipo} & \textbf{Dato} \\\hline
+		Rut	     &	\textit{primary\_key} & \texttt{INT} \\\hline
+		Nombre	 &	\textit{---}          & \texttt{STRING} \\\hline
+		Sexo	 &	\textit{---}          & \texttt{BOOLEAN} \\\hline
+		F. Nac   &	\textit{---}          & \texttt{STRING} \\\hline
+		F. inicio&	\textit{---}          & \texttt{STRING} \\\hline
+		Grado	 &	\textit{---}          & \texttt{STRING} \\\hline
+		Peso	 &	\textit{---}          & \texttt{STRING} \\\hline
+		Altura	 &	\textit{---}          & \texttt{STRING} \\\hline
+		Dirección&	\textit{---}          & \texttt{STRING} \\\hline
+		Teléfono &	\textit{---}          & \texttt{STRING} \\\hline
+		Celular  &	\textit{---}          & \texttt{STRING} \\\hline
+		Actividad&	\textit{---}          & \texttt{STRING} \\\hline
+		Apoderado&	\textit{---}          & \texttt{STRING} \\\hline
+		Email	 &	\textit{---}          & \texttt{STRING} \\\hline
+		Vigente  &	\textit{---}          & \texttt{BOOLEAN} \\\hline
+	\end{tabular}
+	&
+	\begin{tabular}[t]{|c|c|c|}
+		\hline
+		\multicolumn{3}{|c|}{Club}\\\hline
+		\textbf{Atributo} 	& \textbf{Tipo} & \textbf{Dato} \\\hline
+		Rut\_club			&  	\textit{primary\_key} & \texttt{INT} \\\hline
+		Razón Social		&	\textit{---}          & \texttt{STRING} \\\hline
+		Domicilio 			&	\textit{---}          & \texttt{STRING} \\\hline
+		Presidente 			&	\textit{---}          & \texttt{STRING} \\\hline
+		Rut\_pdte 			&	\textit{---}          & \texttt{INT} \\\hline
+		Domicilio\_pdte 	&	\textit{---}          & \texttt{STRING} \\\hline
+		Teléfono 			&	\textit{---}          & \texttt{INT} \\\hline
+		Email	 			&	\textit{---}          & \texttt{STRING} \\\hline
+	\end{tabular}
+	&
+	\begin{tabular}[t]{|c|c|c|}
+		\hline
+		\multicolumn{3}{|c|}{Cuota}\\\hline
+		\textbf{Atributo} 	& \textbf{Tipo} & \textbf{Dato} \\\hline
+		Id\_cuota			&  	\textit{primary\_key} & \texttt{INT} \\\hline
+		Rut\_alumno			&	\textit{---}          & \texttt{INT} \\\hline
+		Mes		 			&	\textit{---}          & \texttt{INT} \\\hline
+		Año		 			&	\textit{---}          & \texttt{INT} \\\hline
+		Descripción			&	\textit{---}          & \texttt{STRING} \\\hline
+		Monto	 			&	\textit{---}          & \texttt{INT} \\\hline
+		Pagada	 			&	\textit{---}          & \texttt{INT} \\\hline
+		Abono	 			&	\textit{---}          & \texttt{INT} \\\hline
+		Fecha 				&	\textit{---}          & \texttt{STRING} \\\hline
+		Boleta 				&	\textit{---}          & \texttt{INT} \\\hline
+	\end{tabular}
+	\\
+	\begin{tabular}[t]{|c|c|c|}
+		\hline
+		\multicolumn{3}{|c|}{Administrador}\\\hline
+		\textbf{Atributo} 	& \textbf{Tipo} & \textbf{Dato} \\\hline
+		Rut					&  	\textit{primary\_key} & \texttt{INT} \\\hline
+		Nombre				&	\textit{---}          & \texttt{STRING} \\\hline
+		Password 			&	\textit{---}          & \texttt{STRING} \\\hline
+	\end{tabular}
+	&
+	\begin{tabular}[t]{|c|c|c|}
+		\hline
+		\multicolumn{3}{|c|}{Campeonato}\\\hline
+		\textbf{Atributo} 	& \textbf{Tipo} 		& \textbf{Dato} \\\hline
+		Id\_campeonato		& \textit{primary\_key} & \texttt{INT} \\\hline
+		Nombre	 			& \textit{---}          & \texttt{INT} \\\hline
+		Fecha	 			& \textit{---}          & \texttt{INT} \\\hline
+		Ciudad	 			& \textit{---}          & \texttt{INT} \\\hline
+	\end{tabular}
+	&
+	\begin{tabular}[t]{|c|c|c|}
+		\hline
+		\multicolumn{3}{|c|}{Campeonatos}\\\hline
+		\textbf{Atributo} 	& \textbf{Tipo} & \textbf{Dato} \\\hline
+		Id					& \textit{primary\_key} & \texttt{INT} \\\hline
+		Id\_campeonato		& \textit{foreign\_key} & \texttt{INT} \\\hline
+		Rut		 			& \textit{foreign\_key} & \texttt{INT} \\\hline
+		Categoria 			& \textit{---}          & \texttt{STRING} \\\hline
+		Combate 			& \textit{---}          & \texttt{STRING} \\\hline
+		Poomsae 			& \textit{---}          & \texttt{STRING} \\\hline
+		Resultado			& \textit{---}          & \texttt{STRING} \\\hline
+	\end{tabular}
+	\\
+	\begin{tabular}[t]{|c|c|c|}
+		\hline
+		\multicolumn{3}{|c|}{Examen}\\\hline
+		\textbf{Atributo} 	& \textbf{Tipo} 		& \textbf{Dato} \\\hline
+		Id\_examen			& \textit{primary\_key} & \texttt{INT} \\\hline
+		Nombre	 			& \textit{---}          & \texttt{INT} \\\hline
+		Fecha	 			& \textit{---}          & \texttt{INT} \\\hline
+		Ciudad	 			& \textit{---}          & \texttt{INT} \\\hline
+	\end{tabular}
+	&
+	\begin{tabular}[t]{|c|c|c|}
+		\hline
+		\multicolumn{3}{|c|}{Examenes}\\\hline
+		\textbf{Atributo} 	& \textbf{Tipo} 		& \textbf{Dato} \\\hline
+		Id					& \textit{primary\_key} & \texttt{INT} \\\hline
+		Id\_examen 			& \textit{---}          & \texttt{INT} \\\hline
+		Resultado 			& \textit{---}          & \texttt{INT} \\\hline
+		Comentario 			& \textit{---}          & \texttt{INT} \\\hline
+	\end{tabular}
+	&
+
+	\\
+\end{tabular}
+}
+
+\section{Diagrama}
+........
+\end{document} 
