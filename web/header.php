@@ -4,10 +4,10 @@
 <title>Mu Ki Do - Administraci&oacute;n</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
-<link href="style.css" rel="stylesheet" type="text/css" />
-<link href="layout.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/layout.css" rel="stylesheet" type="text/css" />
 <!--[if lt IE 7]>
-	<link href="ie_style.css" rel="stylesheet" type="text/css" />
+	<link href="css/ie_style.css" rel="stylesheet" type="text/css" />
 <![endif]-->
 </head>
 

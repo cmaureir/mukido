@@ -9,7 +9,7 @@ html {
 	min-width:890px;
 }
 body { 
-	background:url(images/tail-top.gif) 0 0 repeat-x #fff; 
+	background:url(../images/tail-top.gif) 0 0 repeat-x #fff; 
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:100%; 
 	line-height:1.0625em;
@@ -89,11 +89,11 @@ table, table td {
 	#content .mainContent {
 		float:left;
 		width:618px;
-		background:url(images/line-hor.gif) 0 0 repeat-x;
+		background:url(../images/line-hor.gif) 0 0 repeat-x;
 		padding:20px 0 0 0;
 	}
 #footer {
-	background:url(images/line-hor.gif) 0 0 repeat-x;
+	background:url(../images/line-hor.gif) 0 0 repeat-x;
 	padding:28px 0 45px 0;
 }
 
@@ -173,7 +173,7 @@ h3 {
 	font-weight:normal;
 	color:#f94c75;
 	margin-bottom:2px;
-	background:url(images/line-hor.gif) 0 100% repeat-x;
+	background:url(../images/line-hor.gif) 0 100% repeat-x;
 	padding:0 0 9px 0;
 	margin-bottom:17px;
 }
@@ -203,7 +203,7 @@ h6 {
 }
 
 .link1 { 
-	background:url(images/arrow3.gif) no-repeat 100% 6px;
+	background:url(../images/arrow3.gif) no-repeat 100% 6px;
 	padding:0 13px 0 0;
 	color:#000;
 	text-decoration:none;
@@ -213,7 +213,7 @@ h6 {
 }
 
 .line-hor { 
-	background:url(images/line-hor.gif) 0 0 repeat-x;
+	background:url(../images/line-hor.gif) 0 0 repeat-x;
 	height:1px;
 	overflow:hidden;
 	font-size:0;
@@ -224,12 +224,12 @@ h6 {
 
 /*==================boxes====================*/
 .box {
-	background:url(images/box-bg.gif) 0 0 repeat-x;
+	background:url(../images/box-bg.gif) 0 0 repeat-x;
 	width:100%;
 }
 	.box .inner { 
-		background:url(images/box-bg.gif) 0 100% repeat-x;
-		padding:41px 0 35px 0;
+		background:url(../images/box-bg.gif) 0 100% repeat-x;
+		padding:31px 0 25px 10px;
 	}
 
 .address { 
@@ -297,7 +297,7 @@ h6 {
 		}
 			#content .nav li a {
 				display:block;
-				background:url(images/nav-bg.gif) 0 0 repeat-x;
+				background:url(../images/nav-bg.gif) 0 0 repeat-x;
 				color:#939393;
 				font-size:14px;
 				text-decoration:none;
@@ -306,14 +306,14 @@ h6 {
 				padding-right:15px;
 			}
 			#content .nav li a:hover, #content .nav li a.current {
-				background:url(images/nav-bg-act.gif) 0 0 repeat-x;
+				background:url(../images/nav-bg-act.gif) 0 0 repeat-x;
 				color:#000;
 				text-align:right;
 			}
 
 
 .list1 li {
-	padding:0 0 11px 0;
+	padding:0 4px 8px 15px;
 	font-size:12px;
 }
 	.list1 li a {
@@ -322,7 +322,7 @@ h6 {
 		padding-left:17px;
 	}
 	.list1 li a:hover {
-		background:url(images/arrow1.gif) no-repeat 0 4px;
+		background:url(../images/arrow1.gif) no-repeat 0 4px;
 		color:#4cdff9;
 	}
 	.list1 li a:active {
@@ -335,7 +335,7 @@ h6 {
 	padding:0 0 0 16px;
 }
 .list2 li {
-	background:url(images/arrow2.gif) no-repeat 0 5px;
+	background:url(../images/arrow2.gif) no-repeat 0 5px;
 	padding:0 0 10px 17px;
 	font-size:12px;
 }

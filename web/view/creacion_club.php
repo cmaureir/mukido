@@ -5,13 +5,11 @@
     	<div class="wrapper">
 		<?php require_once("sidebar.php"); ?>
 			<div class="mainContent">
-	        	<h2>Welcome to our website</h2>
+	        	<h2>Creaci&oacute;n Club</h2>
 					<div class="line-hor"></div>
-					<div class="txt1">
 						Lorem ipsum dolor sit amet, consectetuer adipiscing elit,<br />
 						sed diam nonummy nibh euismod tincidunt ut laoreet<br />
 						dolore magna aliquam erat volutpat.
-					</div>
 			</div>
 
 		</div>
