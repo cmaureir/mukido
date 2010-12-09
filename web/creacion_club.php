@@ -8,16 +8,30 @@
 	        	<h2>Creaci&oacute;n Club</h2>
 					<div class="line-hor"></div>
 						<form action="creacion_club.php" method="post">
-							<p><label>Raz&oacute;n Social:</label> <input type="text" name="razon" /><br/></p>
-							<p><label>R.U.T: </label><input type="text" name="rut" /><br/></p>
-							<p><label>Domicilio: </label><input type="text" name="domicilio" /><br/></p>
-							<p><label>Presidente: </label><input type="text" name="presidente" /><br/></p>
-							<p><label>R.U.T Presidente: </label><input type="text" name="presidente_rut" /><br/></p>
-							<p><label>Domicilio Presidente: </label><input type="text" name="presidente_domicilio" /><br/></p>
-							<p><label>Telefono: </label><input type="text" name="presidente_telefono" /><br/></p>
-							<p><label>Email: </label><input type="text" name="presidente_email" /><br/></p>
-							<p align="center"><input type="submit" /></p>
+							<div id="half-column"><label>Raz&oacute;n Social:</label> <input type="text" name="razon" /></div>
+							<div id="half-column"><label>R.U.T: </label><input type="text" name="rut" /></div>
+							<div id="total-column"><label>Domicilio: </label><input type="text" name="domicilio" size="40"/></div>
+							<div id="total-column"><label>Presidente: </label><input type="text" name="presidente" size="40"/></div>
+							<div id="half-column"><label>R.U.T Presidente: </label><input type="text" name="presidente_rut" /></div>
+							<div id="half-column"><label>Telefono: </label><input type="text" name="presidente_telefono" /></div>
+							<div id="total-column"><label>Domicilio Presidente: </label><input type="text" name="presidente_domicilio" size="40"/></div>
+							<div id="total-column"><label>Email: </label><input type="text" name="presidente_email" size="40"/></div>
+							<div id="total-column"><label>&nbsp;</label><input type="submit" /></div>
 						</form>
+			<?php
+			if (isset($_POST["razon"]) && $_POST["razon"] != "" &&
+				isset($_POST["rut"])   && $_POST["rut"]  != "" && 
+				isset($_POST["domicilio"])   && $_POST["domicilio"]  != "" && 
+				isset($_POST["presidente"])   && $_POST["presidente"]  != "" && 
+				isset($_POST["presidente_rut"])   && $_POST["presidente_rut"]  != "" && 
+				isset($_POST["presidente_domicilio"])   && $_POST["presidente_domicilio"]  != "" && 
+				isset($_POST["presidente_telefono"])   && $_POST["presidente_telefono"]  != "" && 
+				isset($_POST["presidente_email"])   && $_POST["presidente_email"]  != ""
+				){
+
+				echo $_POST["rut"];
+			}
+			?>
 			</div>
 
 		</div>

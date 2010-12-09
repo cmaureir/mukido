@@ -516,3 +516,54 @@ text-align: right;
 margin-right: 0.5em;
 display: block
 }
+
+#half-column {
+float:left;
+padding: 10px;
+/*width:45%;*/
+width:40%;
+}
+
+#total-column {
+float:left;
+padding: 10px;
+width:90%;
+}
+
+#q-column {
+float:left;
+padding: 10px;
+width:30%;
+}
+
+#sq-column {
+float:left;
+padding: 10px;
+width:23%;
+}
+
+#q3-column {
+float:left;
+padding: 10px;
+width:60%;
+}
+
+/*
+#left {
+float:left;
+padding: 10px;
+width:30%;
+}
+
+#middle{
+float:left;
+padding: 10px;
+width:30%;
+}
+
+#right{
+float:left;
+padding: 10px;
+width:30px;
+}
+*/

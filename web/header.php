@@ -4,6 +4,7 @@
 <title>Mu Ki Do - Administraci&oacute;n</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="SHORTCUT ICON" href="images/favicon.ico">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link href="css/layout.css" rel="stylesheet" type="text/css" />
 <!--[if lt IE 7]>
