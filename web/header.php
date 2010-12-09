@@ -7,6 +7,35 @@
 <link rel="SHORTCUT ICON" href="images/favicon.ico">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link href="css/layout.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" media="screen" href="css/datePicker.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/date.js"></script>
+<script type="text/javascript" src="js/jquery.datePicker.js"></script>
+<script type="text/javascript" charset="utf-8">
+    $(function()
+    {
+	$('.date-pick').datePicker({startDate:'01/01/1900'});
+    });
+</script>
+<style>
+a.dp-choose-date {
+	float: left;
+	width: 16px;
+	height: 16px;
+	padding: 0;
+	margin: 5px 3px 0;
+	display: block;
+	text-indent: -2000px;
+	overflow: hidden;
+	background: url(images/calendar.png) no-repeat; 
+}
+a.dp-choose-date.dp-disabled {
+	background-position: 0 -20px;
+	cursor: default;
+}
+</style>
+
+
 <!--[if lt IE 7]>
 	<link href="css/ie_style.css" rel="stylesheet" type="text/css" />
 <![endif]-->

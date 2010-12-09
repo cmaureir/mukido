@@ -8,8 +8,8 @@
 	        	<h2>Creaci&oacute;n Club</h2>
 					<div class="line-hor"></div>
 						<form action="creacion_club.php" method="post">
-							<div id="half-column"><label>Raz&oacute;n Social:</label> <input type="text" name="razon" /></div>
-							<div id="half-column"><label>R.U.T: </label><input type="text" name="rut" /></div>
+							<div id="half-column"><label>Raz&oacute;n Social:</label> <input type="text" name="razon" size="20"/></div>
+							<div id="half-column"><label>R.U.T: </label><input type="text" name="rut" size="10"/></div>
 							<div id="total-column"><label>Domicilio: </label><input type="text" name="domicilio" size="40"/></div>
 							<div id="total-column"><label>Presidente: </label><input type="text" name="presidente" size="40"/></div>
 							<div id="half-column"><label>R.U.T Presidente: </label><input type="text" name="presidente_rut" /></div>
