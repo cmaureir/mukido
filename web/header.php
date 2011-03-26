@@ -4,9 +4,11 @@
 <title>Mu Ki Do - Administraci&oacute;n</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
-<link rel="SHORTCUT ICON" href="images/favicon.ico">
+<link rel="SHORTCUT ICON" href="images/favicon.ico"/>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link href="css/layout.css" rel="stylesheet" type="text/css" />
+<link href="css/buttons.css" rel="stylesheet" type="text/css" />
+<link href="css/login.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" media="screen" href="css/datePicker.css">
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/date.js"></script>
@@ -26,7 +28,7 @@ a.dp-choose-date {
 	margin: 5px 3px 0;
 	display: block;
 	text-indent: -2000px;
-	overflow: hidden;
+/*	overflow: hidden;*/
 	background: url(images/calendar.png) no-repeat; 
 }
 a.dp-choose-date.dp-disabled {
@@ -39,6 +41,10 @@ a.dp-choose-date.dp-disabled {
 <!--[if lt IE 7]>
 	<link href="css/ie_style.css" rel="stylesheet" type="text/css" />
 <![endif]-->
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+?>
 </head>
 
 <body id="home">
@@ -60,7 +66,7 @@ a.dp-choose-date.dp-disabled {
       <!-- .logo -->
 
       <div class="logo">
-		<img src="images/logo1.png" alt="logo" />
+		<a href="index.php"><img src="images/logo1.png" alt="logo" /></a>
       	<h1>Mu Ki Do</h1>
       </div>
       <!-- /.logo -->

@@ -5,12 +5,13 @@
     	<div class="wrapper">
 		<?php require_once("sidebar.php"); ?>
 			<div class="mainContent">
-	        	<h2>Welcome to our website</h2>
+	        	<h2>Interfaz Administrativa</h2>
 					<div class="line-hor"></div>
 					<div class="txt1">
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit,<br />
-						sed diam nonummy nibh euismod tincidunt ut laoreet<br />
-						dolore magna aliquam erat volutpat.
+                  Para comenzar a realizar cualquier tarea
+                  es necesario <a href="login.php">autentificarse.</a><br/><br/>
+
+                  Reporte de problemas: <a href="mailto:cmaureir@csrg.cl">cmaureir@csrg.cl</a>
 					</div>
 			</div>
 

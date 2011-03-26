@@ -1,20 +1,22 @@
 <?php session_start();
+
 //datos para establecer la conexion con la base de mysql.
 //mysql_connect('localhost','usuario','password')or die ('Ha fallado la conexión: '.mysql_error());
 //mysql_select_db('mi_base')or die ('Error al seleccionar la Base de Datos: '.mysql_error());
+
 function quitar($mensaje)
 {
 	$nopermitidos = array("'",'\\','<','>',"\"");
 	$mensaje = str_replace($nopermitidos, "", $mensaje);
 	return $mensaje;
 }
-if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
+if(trim($_POST["username"]) != "" && trim($_POST["password"]) != "")
 {
 	// Puedes utilizar la funcion para eliminar algun caracter en especifico
 	//$usuario = strtolower(quitar($HTTP_POST_VARS["usuario"]));
 	//$password = $HTTP_POST_VARS["password"];
 	// o puedes convertir los a su entidad HTML aplicable con htmlentities
-	$usuario = strtolower(htmlentities($_POST["usuario"], ENT_QUOTES));
+	$usuario = strtolower(htmlentities($_POST["username"], ENT_QUOTES));
 	$password = $_POST["password"];
 
 	//$result = mysql_query('SELECT password, usuario FROM usuarios WHERE usuario=\''.$usuario.'\'');

@@ -5,24 +5,40 @@
     	<div class="wrapper">
 		<?php require_once("sidebar.php"); ?>
 			<div class="mainContent">
+
 	        	<h2>Creaci&oacute;n Alumnos</h2>
 					<div class="txt1">
 					</div>
 					<div class="line-hor"></div>
 
+					<?php			
+					if (!isset($_SESSION['username'])) {
+						
+						echo"
+						<SCRIPT LANGUAGE=\"javascript\">
+        				location.href = \"login.php\";
+        				</SCRIPT>
+						";
+					}
+					else{?>
+                  <h3>Datos Alumno</h3>
 						<form action="creacion_alumno.php" method="post">
-							<div id="total-column"><label>Nombre:</label> <input type="text" name="nombre" size="40" /></div>
-							<div id="half-column"><label>R.U.T: </label><input type="text" name="rut" size="10" maxlength="10"/></div>
+							<div id="total-column"><label>Nombres:</label> <input type="text" name="nombre" /></div>
+							<div id="half-column"><label>Apellido Paterno: </label><input type="text" name="rut" maxlength="10"/></div>
+							<div id="half-column"><label>Apellido Materno: </label><input type="text" name="rut" maxlength="10"/></div>
+							<div id="total-column"><label>Email: </label><input type="text" name="email" /></div>
+							<div id="half-column"><label>R.U.T: </label><input type="text" name="rut" maxlength="10"/></div>
 							<div id="half-column"><label>Actividad: </label><input type="text" name="actividad" /></div>
-							<div id="total-column"><label>Domicilio: </label><input type="text" name="domicilio" size="40"/></div>
-							<div id="half-column"><label>Fecha de Nacimiento: </label><input type="text" name="fecha_nac" id="fecha_nac" class="date-pick" size="10"/>
-								</div>
-							<div id="half-column"><label>Fecha Inicio: </label><input type="text" name="fecha_inicio" id="fecha_inicio" class="date-pick" size="10"/></div>
-							<div id="total-column"><label>Direcci&oacute;n: </label><input type="text" name="direccion" size="40"/></div>
-							<div id="half-column"><label>Telefono: </label><input type="text" name="telefono" size="10"/></div>
-							<div id="half-column"><label>Celular: </label><input type="text" name="telefono" size="11"/></div>
+							<div id="total-column"><label>Domicilio: </label><input type="text" name="domicilio"/></div>
+							<div id="half-column"><label>Fecha de Nacimiento: </label><input type="text" name="fecha_nac" id="fecha_nac" class="date-pick"/></div>
+							<div id="half-column"><label>Fecha Inicio: </label><input type="text" name="fecha_inicio" id="fecha_inicio" class="date-pick"/></div>
+							<div id="total-column"><label>Direcci&oacute;n: </label><input type="text" name="direccion"/></div>
+							<div id="half-column"><label>Actividad: </label><input type="text" name="actividad"/></div>
+							<div id="half-column"><label>Instituci&oacute;n: </label><input type="text" name="institucion"/></div>
+							<div id="half-column"><label>Telefono: </label><input type="text" name="telefono"/></div>
+							<div id="half-column"><label>Celular: </label><input type="text" name="telefono"/></div>
 							<div id="half-column"><label>Grado: </label>
-								<select name="grado">
+								<select name="grado" >
 									<option value="10">Blanco</option>
 									<option value="9">Punta Amarillo</option>
 									<option value="8">Amarillo</option>
@@ -51,15 +67,18 @@
 									<option value="F">Femenino</option>
 								</select>
 							</div>
-							<div id="half-column"><label>Peso: </label><input type="text" name="peso" size="3"/> kg</div>
-							<div id="half-column"><label>Altura: </label><input type="text" name="altura" size="3"/> cm</div>
+							<div id="half-column"><label>Peso: </label><input type="text" name="peso"/> kg</div>
+							<div id="half-column"><label>Altura: </label><input type="text" name="altura"/> cm</div>
+							<div id="total-column"><label>Foto: </label><input type="file" name="foto"/></div>
 							<div id="total-column"><div class="line-hor"></div></div>
-							<div id="total-column"><label>Apoderado: </label><input type="text" name="apoderado" size="40"/></div>
-							<div id="q-column"><label>R.U.T: </label><input type="text" name="apoderado_rut" size="10"/></div>
-							<div id="half-column"><label>Telefono: </label><input type="text" name="apoderado_telefono" size="10"/></div>
-							<div id="total-column"><label>Email: </label><input type="text" name="apoderado_email" size="30"/></div>
-							<div id="total-column"><label>&nbsp;</label><input type="submit" value="Agregar"/></div>
+                     <div id="total-column"><h3>Datos Apoderado</h3></div>
+							<div id="total-column"><label>Nomnre: </label><input type="text" name="apoderado"/></div>
+							<div id="half-column"><label>R.U.T: </label><input type="text" name="apoderado_rut" /></div>
+							<div id="half-column"><label>Telefono: </label><input type="text" name="apoderado_telefono"/></div>
+							<div id="total-column"><label>Email: </label><input type="text" name="apoderado_email"/></div>
+							<div id="submit-column"><label>&nbsp;</label><input type="submit" value="Agregar"/></div>
 						</form>
+					<?php }?>
 			<?php
 			if (isset($_POST["nombre"]) && $_POST["nombre"] != "" &&
 				isset($_POST["rut"])   && $_POST["rut"]  != "" && 

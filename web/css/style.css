@@ -89,24 +89,27 @@ table, table td {
 	#content .mainContent {
 		float:left;
 		width:618px;
-		background:url(../images/line-hor.gif) 0 0 repeat-x;
 		padding:20px 0 0 0;
+
 	}
 #footer {
-	background:url(../images/line-hor.gif) 0 0 repeat-x;
 	padding:28px 0 45px 0;
 }
 
 
 /*----- forms parameters -----*/
 
-input, select, textarea { 
+input, textarea { 
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:1em;
 	vertical-align:middle;
 	font-weight:normal;
 }
 
+select {
+   padding: 3px;
+   width: 160px;
+}
 
 /*----- other -----*/
 .img-indent { 
@@ -146,7 +149,7 @@ a {
 	color:#000; 
 	outline:none;
 }
-a:hover{
+a:hover {
 	text-decoration:none;
 }
 
@@ -160,10 +163,12 @@ h1 {
 		text-decoration:none;
 	}
 h2 {
-	font-size:14px;
+	font-size:17px;
 	font-weight:normal;
 /*	color:#4cdff9;*/
 	color:#00005E;
+   background-color: #fff;
+   text-shadow: 2px 2px 2px #ddccb5;
 	margin-bottom:2px;
 }
 	h2.outdent {
@@ -172,9 +177,8 @@ h2 {
 h3 {
 	font-size:14px;
 	font-weight:normal;
-	color:#f94c75;
+	color:#00005E;
 	margin-bottom:2px;
-	background:url(../images/line-hor.gif) 0 100% repeat-x;
 	padding:0 0 9px 0;
 	margin-bottom:17px;
 }
@@ -203,6 +207,12 @@ h6 {
 	line-height:18px;
 }
 
+.txt1 a {
+   text-decoration: none;
+	font-weight:bold;
+	color:#3348B4;
+}
+
 .link1 { 
 	background:url(../images/arrow3.gif) no-repeat 100% 6px;
 	padding:0 13px 0 0;
@@ -214,12 +224,18 @@ h6 {
 }
 
 .line-hor { 
-	background:url(../images/line-hor.gif) 0 0 repeat-x;
+/*	background:url(../images/line-hor.gif) 0 0 repeat-x;
 	height:1px;
 	overflow:hidden;
 	font-size:0;
 	line-height:0;
-	margin:20px 0 20px 0;
+	margin:20px 0 20px 0;*/
+   margin: 25px 0;
+   height: 1px;
+   background: black;
+   background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, black));
+
+
 }
 
 
@@ -232,32 +248,6 @@ h6 {
 		background:url(../images/box-bg.gif) 0 100% repeat-x;
 		padding:31px 0 25px 10px;
 	}
-
-.address { 
-	float:left;
-	margin-right:20px;
-}
-.address.last {
-	margin-right:0;
-}
-	.address dt {
-		margin-bottom:16px;
-	}
-	.address dd { 
-		clear:both;
-		text-align:right;
-	}
-	.address dd.alt {
-		text-align:left;
-	}
-		.address dd span { 
-			float:left;
-			padding-right:25px;
-		}
-		.address dd a {
-			color:#4cdff9;
-		}
-
 
 /*===== header =====*/
 #header .address {
@@ -418,101 +408,9 @@ h6 {
 		}
 
 
-/*----- forms -----*/
-#search-form {
-	position:absolute;
-	right:0;
-	top:107px;
-}
-	#search-form fieldset {
-		display:inline;
-		border:none;
-	}
-		#search-form input.text {
-			width:162px;
-			border:1px solid #dedede;
-			border-right:none;
-			padding:1px 0 1px 4px;
-		}
-		#search-form input.submit {
-			border:1px solid #dedede;
-			width:49px;
-			height:20px;
-			background:none;
-			color:#000;
-			font-size:12px;
-			cursor:pointer;
-		}
-
-
-#newsletter-form fieldset {
-	border:1px solid #d6d5d5;
-	padding:15px 12px 15px 12px;
-}
-	#newsletter-form h4 {
-		color:#4cdff9;
-	}
-	#newsletter-form input.text {
-		width:140px;
-		border:1px solid #dedede;
-		border-right:none;
-		padding:2px 0 2px 4px;
-		color:#b2b2b2;
-		font-size:11px;
-	}
-	#newsletter-form input.submit {
-		border:1px solid #dedede;
-		width:49px;
-		height:20px;
-		background:none;
-		color:#000;
-		font-size:12px;
-		cursor:pointer;
-	}
-
-
-#contacts-form fieldset {
-	border:none;
-}
-	#contacts-form label {
-		display:block;
-		height:45px;
-	}
-	#contacts-form input {
-		width:235px;
-		background:none;
-		border:1px solid #a6a6a6;
-		padding:2px 0 2px 5px;
-	}
-	#contacts-form textarea {
-		width:276px;
-		background:none;
-		border:1px solid #a6a6a6;
-		overflow:auto;
-		height:106px;
-		padding:2px 0 2px 5px;
-		margin-bottom:14px;
-	}
-
-	#contacts-form .col-1 {
-		width:298px !important;
-		margin:0 !important;
-	}
-	#contacts-form .col-2 {
-		width:283px !important;
-		margin:0 !important;
-	}
-	#contacts-form .button {
-		float:right;
-		margin-left:20px;
-	}
-
-.inner_copy {border:0;color:#f00;float:left;width:50%!important;margin:-202px 0 0 0;overflow:hidden;line-height:0;padding:0;font-size:12px} 
-/*==========================================*/
-
 label
 {
-width: 65px;
+width: 70px;
 float: left;
 text-align: right;
 margin-right: 0.5em;
@@ -525,46 +423,35 @@ padding: 10px;
 width:45%;
 }
 
+#half-column input {
+width: 150px;
+}
+
+#half-column label {
+margin-top: 6px;
+}
+
 #total-column {
 float:left;
 padding: 10px;
-width:90%;
+width:100%;
 }
 
-#q-column {
-float:left;
-padding: 10px;
-width:30%;
+#total-column input {
+width: 450px;
 }
 
-#sq-column {
-float:left;
-padding: 10px;
-width:23%;
+#total-column label {
+margin-top: 6px;
 }
 
-#q3-column {
+#submit-column {
 float:left;
 padding: 10px;
-width:60%;
+width:100%;
+margin-top: 30px;
 }
 
-/*
-#left {
-float:left;
-padding: 10px;
-width:30%;
+#submit-column input {
+width: 100px;
 }
-
-#middle{
-float:left;
-padding: 10px;
-width:30%;
-}
-
-#right{
-float:left;
-padding: 10px;
-width:30px;
-}
-*/

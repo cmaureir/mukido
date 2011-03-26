@@ -10,6 +10,17 @@
 					</div>
 					<div class="line-hor"></div>
 				
+					<?php			
+					if (!isset($_SESSION['username'])) {
+						
+						echo"
+						<SCRIPT LANGUAGE=\"javascript\">
+        				location.href = \"login.php\";
+        				</SCRIPT>
+						";
+					}
+					else{?>
+
 						<form action="creacion_alumno.php" method="post">
 							<p><label>Nombre:</label> <input type="text" name="nombre" /></p>
 							<p><label>R.U.T: </label><input type="text" name="rut" /></p>
@@ -29,6 +40,7 @@
 							<p><label>Email: </label><input type="text" name="apoderado_email" /></p>
 							<p><label>&nbsp;</label><input type="submit" /></p>
 						</form>
+					<?php }?>
 			<?php
 			if (isset($_POST["nombre"]) && $_POST["nombre"] != "" &&
 				isset($_POST["rut"])   && $_POST["rut"]  != "" && 

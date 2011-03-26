@@ -7,17 +7,32 @@
 			<div class="mainContent">
 	        	<h2>Creaci&oacute;n Club</h2>
 					<div class="line-hor"></div>
+					<?php			
+					if (!isset($_SESSION['username'])) {
+						
+						echo"
+						<SCRIPT LANGUAGE=\"javascript\">
+        				location.href = \"login.php\";
+        				</SCRIPT>
+						";
+					}
+					else{?>
+
+               <h3>Datos Club</h3>
 						<form action="creacion_club.php" method="post">
-							<div id="half-column"><label>Raz&oacute;n Social:</label> <input type="text" name="razon" size="20"/></div>
-							<div id="half-column"><label>R.U.T: </label><input type="text" name="rut" size="10"/></div>
-							<div id="total-column"><label>Domicilio: </label><input type="text" name="domicilio" size="40"/></div>
-							<div id="total-column"><label>Presidente: </label><input type="text" name="presidente" size="40"/></div>
-							<div id="half-column"><label>R.U.T Presidente: </label><input type="text" name="presidente_rut" /></div>
+							<div id="half-column"><label>Raz&oacute;n Social:</label> <input type="text" name="razon"/></div>
+							<div id="half-column"><label>R.U.T: </label><input type="text" name="rut" size="20"/></div>
+							<div id="total-column"><label>Domicilio: </label><input type="text" name="domicilio" /></div>
+                     <div id="total-column"><div class="line-hor"></div></div>
+                     <h3>Datos Presidente</h3>
+							<div id="total-column"><label>Nombre: </label><input type="text" name="presidente" /></div>
+							<div id="half-column"><label>R.U.T: </label><input type="text" name="presidente_rut"  /></div>
 							<div id="half-column"><label>Telefono: </label><input type="text" name="presidente_telefono" /></div>
-							<div id="total-column"><label>Domicilio Presidente: </label><input type="text" name="presidente_domicilio" size="40"/></div>
-							<div id="total-column"><label>Email: </label><input type="text" name="presidente_email" size="40"/></div>
-							<div id="total-column"><label>&nbsp;</label><input type="submit" /></div>
+							<div id="total-column"><label>Domicilio: </label><input type="text" name="presidente_domicilio" /></div>
+							<div id="total-column"><label>Email: </label><input type="text" name="presidente_email"/></div>
+							<div id="submit-column"><label>&nbsp;</label><input type="submit" /></div>
 						</form>
+					<?php }?>
 			<?php
 			if (isset($_POST["razon"]) && $_POST["razon"] != "" &&
 				isset($_POST["rut"])   && $_POST["rut"]  != "" && 
