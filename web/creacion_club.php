@@ -5,6 +5,13 @@
     	<div class="wrapper">
 		<?php require_once("sidebar.php"); ?>
 			<div class="mainContent">
+            <div class="breadCrumbHolder module"><div id="breadCrumb0" class="breadCrumb module">
+                    <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="crear.php">Crear</a></li>
+                        <li>Creaci&oacute;n Club</li>
+                    </ul>
+            </div></div>
 	        	<h2>Creaci&oacute;n Club</h2>
 					<div class="line-hor"></div>
 					<?php			
@@ -30,7 +37,7 @@
 							<div id="half-column"><label>Telefono: </label><input type="text" name="presidente_telefono" /></div>
 							<div id="total-column"><label>Domicilio: </label><input type="text" name="presidente_domicilio" /></div>
 							<div id="total-column"><label>Email: </label><input type="text" name="presidente_email"/></div>
-							<div id="submit-column"><label>&nbsp;</label><input type="submit" /></div>
+							<div id="submit-column"><label>&nbsp;</label><input type="submit" value="Crear"/></div>
 						</form>
 					<?php }?>
 			<?php

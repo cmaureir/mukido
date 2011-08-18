@@ -5,6 +5,13 @@
     	<div class="wrapper">
 		<?php require_once("sidebar.php"); ?>
 			<div class="mainContent">
+            <div class="breadCrumbHolder module"><div id="breadCrumb0" class="breadCrumb module">
+                    <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="crear.php">Crear</a></li>
+                        <li>Creaci&oacute;n Alumnos</li>
+                    </ul>
+            </div></div>
 
 	        	<h2>Creaci&oacute;n Alumnos</h2>
 					<div class="txt1">
@@ -24,14 +31,14 @@
                   <h3>Datos Alumno</h3>
 						<form action="creacion_alumno.php" method="post">
 							<div id="total-column"><label>Nombres:</label> <input type="text" name="nombre" /></div>
-							<div id="half-column"><label>Apellido Paterno: </label><input type="text" name="rut" maxlength="10"/></div>
-							<div id="half-column"><label>Apellido Materno: </label><input type="text" name="rut" maxlength="10"/></div>
+							<div id="half-column"><label>A. Paterno: </label><input type="text" name="rut" maxlength="10"/></div>
+							<div id="half-column"><label>A. Materno: </label><input type="text" name="rut" maxlength="10"/></div>
 							<div id="total-column"><label>Email: </label><input type="text" name="email" /></div>
 							<div id="half-column"><label>R.U.T: </label><input type="text" name="rut" maxlength="10"/></div>
 							<div id="half-column"><label>Actividad: </label><input type="text" name="actividad" /></div>
 							<div id="total-column"><label>Domicilio: </label><input type="text" name="domicilio"/></div>
-							<div id="half-column"><label>Fecha de Nacimiento: </label><input type="text" name="fecha_nac" id="fecha_nac" class="date-pick"/></div>
-							<div id="half-column"><label>Fecha Inicio: </label><input type="text" name="fecha_inicio" id="fecha_inicio" class="date-pick"/></div>
+							<div id="half-column"><label>F. Nac.: </label><input type="text" name="fecha_nac" id="fecha_nac" class="date-pick"/></div>
+							<div id="half-column"><label>F. Inicio: </label><input type="text" name="fecha_inicio" id="fecha_inicio" class="date-pick"/></div>
 							<div id="total-column"><label>Direcci&oacute;n: </label><input type="text" name="direccion"/></div>
 							<div id="half-column"><label>Actividad: </label><input type="text" name="actividad"/></div>
 							<div id="half-column"><label>Instituci&oacute;n: </label><input type="text" name="institucion"/></div>
@@ -70,13 +77,18 @@
 							<div id="half-column"><label>Peso: </label><input type="text" name="peso"/> kg</div>
 							<div id="half-column"><label>Altura: </label><input type="text" name="altura"/> cm</div>
 							<div id="total-column"><label>Foto: </label><input type="file" name="foto"/></div>
+							<div id="total-column"><label>Club: </label>
+                        <select name="club">
+                           <option value="0">Sin clubes</option>
+                        </select>
+                     </div>
 							<div id="total-column"><div class="line-hor"></div></div>
                      <div id="total-column"><h3>Datos Apoderado</h3></div>
 							<div id="total-column"><label>Nomnre: </label><input type="text" name="apoderado"/></div>
 							<div id="half-column"><label>R.U.T: </label><input type="text" name="apoderado_rut" /></div>
 							<div id="half-column"><label>Telefono: </label><input type="text" name="apoderado_telefono"/></div>
 							<div id="total-column"><label>Email: </label><input type="text" name="apoderado_email"/></div>
-							<div id="submit-column"><label>&nbsp;</label><input type="submit" value="Agregar"/></div>
+							<div id="submit-column"><label>&nbsp;</label><input type="submit" value="Crear"/></div>
 						</form>
 					<?php }?>
 			<?php

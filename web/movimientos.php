@@ -5,6 +5,12 @@
     	<div class="wrapper">
 		<?php require_once("sidebar.php"); ?>
 			<div class="mainContent">
+            <div class="breadCrumbHolder module"><div id="breadCrumb0" class="breadCrumb module">
+                    <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="movimientos.php">Movimientos</a></li>
+                    </ul>
+            </div></div>
 	        	<h2>Movimientos</h2>
 					<div class="line-hor"></div>
 					<?php			

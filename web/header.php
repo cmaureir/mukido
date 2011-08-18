@@ -9,10 +9,21 @@
 <link href="css/layout.css" rel="stylesheet" type="text/css" />
 <link href="css/buttons.css" rel="stylesheet" type="text/css" />
 <link href="css/login.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" media="screen" href="css/datePicker.css">
+<link href="css/datePicker.css"rel="stylesheet" type="text/css" media="screen" >
+<link rel="stylesheet" href="css/BreadCrumb.css" type="text/css">
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/date.js"></script>
 <script type="text/javascript" src="js/jquery.datePicker.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.jBreadCrumb.1.1.js" language="JavaScript"></script>
+
+<script type="text/javascript">
+   jQuery(document).ready(function()
+      {
+         jQuery("#breadCrumb0").jBreadCrumb();
+      })
+</script>
+
 <script type="text/javascript" charset="utf-8">
     $(function()
     {
@@ -21,21 +32,78 @@
 </script>
 <style>
 a.dp-choose-date {
-	float: left;
+	float: right;
 	width: 16px;
 	height: 16px;
-	padding: 0;
-	margin: 5px 3px 0;
+	padding: 1px -4px 1px 1px;
 	display: block;
+   margin-top: 5px;
+   margin-right: 20px;
 	text-indent: -2000px;
-/*	overflow: hidden;*/
+	overflow: hidden;
 	background: url(images/calendar.png) no-repeat; 
 }
 a.dp-choose-date.dp-disabled {
-	background-position: 0 -20px;
+	background-position: 0 -40px;
 	cursor: default;
 }
 </style>
+
+        <style type="text/css" title="currentStyle">
+            @import "css/demo_table.css";
+        </style>
+
+        <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            var oTable;
+            var giRedraw = false;
+            var values = new Array();
+            
+            $(document).ready(function() {
+
+                $('#example tr').click( function() {
+                    if ( $(this).hasClass('row_selected') )
+                        $(this).removeClass('row_selected');
+                    else
+                        $(this).addClass('row_selected');
+                } );
+
+                $('#example tbody td').click( function () {
+                    /* Get the position of the current data from the node */
+                    var aPos = oTable.fnGetPosition( this );
+
+                    /* Get the data array for this row */
+                    var aData = oTable.fnGetData( aPos[0] );
+
+                    /* Update the data array and return the value */
+                    values.push(aData[0])
+                } );
+                /* Init the table */
+                oTable = $('#example').dataTable( );
+            } );
+            
+
+            function fnGetSelected( oTableLocal )
+            {
+                var aReturn = new Array();
+                var aTrs = oTableLocal.fnGetNodes();
+                
+                for ( var i=0 ; i<aTrs.length ; i++ )
+                {
+                    if ( $(aTrs[i]).hasClass('row_selected') )
+                    {
+                        aReturn.push( aTrs[i] );
+                    }
+                }
+                return aReturn;
+            }
+
+        </script>
+
+
+
+
 
 
 <!--[if lt IE 7]>

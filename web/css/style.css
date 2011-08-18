@@ -89,7 +89,6 @@ table, table td {
 	#content .mainContent {
 		float:left;
 		width:618px;
-		padding:20px 0 0 0;
 
 	}
 #footer {
@@ -106,10 +105,6 @@ input, textarea {
 	font-weight:normal;
 }
 
-select {
-   padding: 3px;
-   width: 160px;
-}
 
 /*----- other -----*/
 .img-indent { 
@@ -237,7 +232,6 @@ h6 {
 
 
 }
-
 
 /*==================boxes====================*/
 .box {
@@ -428,7 +422,11 @@ width: 150px;
 }
 
 #half-column label {
-margin-top: 6px;
+margin-top: 4px;
+}
+#half-column select {
+   padding: 3px;
+   width: 160px;
 }
 
 #total-column {
@@ -442,7 +440,12 @@ width: 450px;
 }
 
 #total-column label {
-margin-top: 6px;
+margin-top: 4px;
+}
+
+#total-column select {
+   padding: 3px;
+   width: 456px;
 }
 
 #submit-column {
@@ -454,4 +457,23 @@ margin-top: 30px;
 
 #submit-column input {
 width: 100px;
+}
+
+#cuota-column {
+float:left;
+padding: 10px;
+width:100%;
+}
+
+#cuota-column input {
+width: 170px;
+}
+
+#cuota-column label {
+margin-top: 4px;
+}
+
+#cuota-column select {
+   padding: 3px;
+   width: 50px;
 }

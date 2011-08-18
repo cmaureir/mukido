@@ -31,27 +31,32 @@
 
 \section{Tablas}
 
-\footnotesize{
+\tiny{
 \begin{tabular}{ccc}
 	\begin{tabular}[t]{|c|c|c|}
 		\hline
 		\multicolumn{3}{|c|}{\textbf{Alumno}}\\\hline
 		\textbf{Atributo} & \textbf{Tipo}         & \textbf{Dato} \\\hline
-		Rut	            & \textit{primary\_key} & \texttt{INT} \\\hline
-		Nombre         	& \textit{---}          & \texttt{STRING} \\\hline
-		Sexo	            & \textit{---}          & \texttt{BOOLEAN} \\\hline
+		Rut	              & \textit{primary\_key} & \texttt{STRING} \\\hline
+		Nombres           & \textit{---}          & \texttt{STRING} \\\hline
+		Apellido Paterno  & \textit{---}          & \texttt{STRING} \\\hline
+		Apellido Materno  & \textit{---}          & \texttt{STRING} \\\hline
+		Sexo	          & \textit{---}          & \texttt{BOOLEAN} \\\hline
+		Foto	          & \textit{---}          & \texttt{STRING} \\\hline
 		F. Nac            & \textit{---}          & \texttt{DATE} \\\hline
 		F. inicio         & \textit{---}          & \texttt{DATE} \\\hline
-		Grado	            & \textit{---}          & \texttt{INT} \\\hline
-		Peso	            & \textit{---}          & \texttt{INT} \\\hline
-		Altura	         & \textit{---}          & \texttt{INT} \\\hline
+		F. retiro         & \textit{---}          & \texttt{DATE} \\\hline
+		Grado	          & \textit{---}          & \texttt{INT} \\\hline
+		Peso	          & \textit{---}          & \texttt{INT} \\\hline
+		Altura	          & \textit{---}          & \texttt{INT} \\\hline
 		Dirección         & \textit{---}          & \texttt{STRING} \\\hline
 		Teléfono          & \textit{---}          & \texttt{INT} \\\hline
 		Celular           & \textit{---}          & \texttt{INT} \\\hline
 		Actividad         & \textit{---}          & \texttt{STRING} \\\hline
-		Apoderado         & \textit{---}          & \texttt{STRING} \\\hline
-		Email	            & \textit{---}          & \texttt{STRING} \\\hline
+		Institución       & \textit{---}          & \texttt{STRING} \\\hline
+		Email	          & \textit{---}          & \texttt{STRING} \\\hline
 		Vigente           & \textit{---}          & \texttt{BOOLEAN} \\\hline
+		Club              & \textit{---}          & \texttt{STRING} \\\hline
 	\end{tabular}
 	&
 	\begin{tabular}[t]{|c|c|c|}
@@ -65,7 +70,8 @@
 		Rut\_pdte 			& \textit{---}          & \texttt{INT} \\\hline
 		Domicilio\_pdte 	& \textit{---}          & \texttt{STRING} \\\hline
 		Teléfono 			& \textit{---}          & \texttt{INT} \\\hline
-		Email	 			   & \textit{---}          & \texttt{STRING} \\\hline
+		Celular	 			& \textit{---}          & \texttt{INT} \\\hline
+		Email	 			& \textit{---}          & \texttt{STRING} \\\hline
 	\end{tabular}
 	&
 	\begin{tabular}[t]{|c|c|c|}
@@ -76,14 +82,37 @@
 		Rut\_alumno			& \textit{---}          & \texttt{INT} \\\hline
 		Mes		 			& \textit{---}          & \texttt{INT} \\\hline
 		Año		 			& \textit{---}          & \texttt{INT} \\\hline
-		Descripción			& \textit{---}          & \texttt{STRING} \\\hline
-		Monto	 			   & \textit{---}          & \texttt{INT} \\\hline
+		Monto	  		    & \textit{---}          & \texttt{INT} \\\hline
 		Pagada	 			& \textit{---}          & \texttt{BOOLEAN} \\\hline
-		Abono	 			   & \textit{---}          & \texttt{INT} \\\hline
-		Fecha 				& \textit{---}          & \texttt{DATE} \\\hline
-		Boleta 				& \textit{---}          & \texttt{INT} \\\hline
+		F. de pago			& \textit{---}          & \texttt{DATE} \\\hline
+		Comentario			& \textit{---}          & \texttt{STRING} \\\hline
 	\end{tabular}
 	\\
+	
+	\begin{tabular}[t]{|c|c|c|}
+		\hline
+		\multicolumn{3}{|c|}{Campeonato}\\\hline
+		\textbf{Atributo} & \textbf{Tipo} 	   	& \textbf{Dato} \\\hline
+		Id\_campeonato		& \textit{primary\_key} & \texttt{INT} \\\hline
+		Nombre	 			& \textit{---}          & \texttt{STRING} \\\hline
+		Fecha	 		   	& \textit{---}          & \texttt{DATE} \\\hline
+		Ciudad	 			& \textit{---}          & \texttt{STRING} \\\hline
+		Lugar	 			& \textit{---}          & \texttt{STRING} \\\hline
+	\end{tabular}
+	&
+	\begin{tabular}[t]{|c|c|c|}
+		\hline
+		\multicolumn{3}{|c|}{Campeonato rendido}\\\hline
+		\textbf{Atributo} & \textbf{Tipo}         & \textbf{Dato} \\\hline
+		Id					   & \textit{primary\_key} & \texttt{INT} \\\hline
+		Id\_campeonato		& \textit{foreign\_key} & \texttt{INT} \\\hline
+		Rut\_alumno			& \textit{foreign\_key} & \texttt{INT} \\\hline
+		Tipo\_participación & \textit{---}          & \texttt{STRING} \\\hline
+		Resultado			& \textit{---}          & \texttt{STRING} \\\hline
+		Comentario			& \textit{---}          & \texttt{STRING} \\\hline
+		Estado  			& \textit{---}          & \texttt{BOOLEAN} \\\hline
+	\end{tabular}
+    &
 	\begin{tabular}[t]{|c|c|c|}
 		\hline
 		\multicolumn{3}{|c|}{Administrador}\\\hline
@@ -92,51 +121,67 @@
 		Nombre				& \textit{---}          & \texttt{STRING} \\\hline
 		Password 			& \textit{---}          & \texttt{STRING} \\\hline
 	\end{tabular}
-	&
-	\begin{tabular}[t]{|c|c|c|}
-		\hline
-		\multicolumn{3}{|c|}{Campeonato}\\\hline
-		\textbf{Atributo} & \textbf{Tipo} 	   	& \textbf{Dato} \\\hline
-		Id\_campeonato		& \textit{primary\_key} & \texttt{INT} \\\hline
-		Nombre	 			& \textit{---}          & \texttt{INT} \\\hline
-		Fecha	 		   	& \textit{---}          & \texttt{INT} \\\hline
-		Ciudad	 			& \textit{---}          & \texttt{INT} \\\hline
-	\end{tabular}
-	&
-	\begin{tabular}[t]{|c|c|c|}
-		\hline
-		\multicolumn{3}{|c|}{Campeonatos}\\\hline
-		\textbf{Atributo} & \textbf{Tipo}         & \textbf{Dato} \\\hline
-		Id					   & \textit{primary\_key} & \texttt{INT} \\\hline
-		Id\_campeonato		& \textit{foreign\_key} & \texttt{INT} \\\hline
-		Rut		 			& \textit{foreign\_key} & \texttt{INT} \\\hline
-		Categoria 			& \textit{---}          & \texttt{STRING} \\\hline
-		Combate 			   & \textit{---}          & \texttt{STRING} \\\hline
-		Poomsae 			   & \textit{---}          & \texttt{STRING} \\\hline
-		Resultado			& \textit{---}          & \texttt{STRING} \\\hline
-	\end{tabular}
 	\\
 	\begin{tabular}[t]{|c|c|c|}
 		\hline
 		\multicolumn{3}{|c|}{Examen}\\\hline
-		\textbf{Atributo} & \textbf{Tipo} 	   	& \textbf{Dato} \\\hline
+		\textbf{Atributo}   & \textbf{Tipo} 	   	& \textbf{Dato} \\\hline
 		Id\_examen			& \textit{primary\_key} & \texttt{INT} \\\hline
-		Nombre	 			& \textit{---}          & \texttt{INT} \\\hline
-		Fecha	 			   & \textit{---}          & \texttt{INT} \\\hline
-		Ciudad	 			& \textit{---}          & \texttt{INT} \\\hline
+		Descripción			& \textit{---}          & \texttt{STRING} \\\hline
+		Fecha	 	 	    & \textit{---}          & \texttt{DATE} \\\hline
+		Ciudad	 			& \textit{---}          & \texttt{STRING} \\\hline
+		Lugar	 			& \textit{---}          & \texttt{STRING} \\\hline
 	\end{tabular}
 	&
 	\begin{tabular}[t]{|c|c|c|}
 		\hline
-		\multicolumn{3}{|c|}{Examenes}\\\hline
-		\textbf{Atributo} & \textbf{Tipo} 	   	& \textbf{Dato} \\\hline
-		Id					   & \textit{primary\_key} & \texttt{INT} \\\hline
-		Id\_examen 			& \textit{---}          & \texttt{INT} \\\hline
-		Resultado 			& \textit{---}          & \texttt{INT} \\\hline
-		Comentario 			& \textit{---}          & \texttt{INT} \\\hline
+		\multicolumn{3}{|c|}{Examen rendido}\\\hline
+		\textbf{Atributo} & \textbf{Tipo}         & \textbf{Dato} \\\hline
+		Id                & \textit{primary\_key} & \texttt{INT} \\\hline
+		Id\_examen        & \textit{---}          & \texttt{INT} \\\hline
+		Rut\_alumno       & \textit{---}          & \texttt{INT} \\\hline
+		Resultado         & \textit{---}          & \texttt{STRING} \\\hline
+		Monto             & \textit{---}          & \texttt{INT} \\\hline
+		Pagado            & \textit{---}          & \texttt{BOOLEAN} \\\hline
+		F. pago           & \textit{---}          & \texttt{DATE} \\\hline
+		Comentario        & \textit{---}          & \texttt{STRING} \\\hline
 	\end{tabular}
 	&
 
+	\begin{tabular}[t]{|c|c|c|}
+		\hline
+		\multicolumn{3}{|c|}{Apoderado}\\\hline
+		\textbf{Atributo}   & \textbf{Tipo} 	   	& \textbf{Dato} \\\hline
+		Rut\_apoderado		& \textit{primary\_key} & \texttt{INT} \\\hline
+		Rut\_alumno 		& \textit{primary\_key} & \texttt{INT} \\\hline
+		Nombre	 	 	    & \textit{---}          & \texttt{STRING} \\\hline
+		Dirección trabajo	& \textit{---}          & \texttt{STRING} \\\hline
+		Teléfono trabajo	& \textit{---}          & \texttt{INT} \\\hline
+		Celular 			& \textit{---}          & \texttt{INT} \\\hline
+		Email    			& \textit{---}          & \texttt{STRING} \\\hline
+	\end{tabular}
+	\\
+	\begin{tabular}[t]{|c|c|c|}
+		\hline
+		\multicolumn{3}{|c|}{Actividad}\\\hline
+		\textbf{Atributo}   & \textbf{Tipo} 	   	& \textbf{Dato} \\\hline
+		Id\_actividad		& \textit{primary\_key} & \texttt{INT} \\\hline
+		Fecha	 	 	    & \textit{---}          & \texttt{DATE} \\\hline
+		Ciudad	 			& \textit{---}          & \texttt{STRING} \\\hline
+		Descripción			& \textit{---}          & \texttt{STRING} \\\hline
+		Instructor 			& \textit{---}          & \texttt{STRING} \\\hline
+	\end{tabular}
+	&
+	\begin{tabular}[t]{|c|c|c|}
+		\hline
+		\multicolumn{3}{|c|}{Actividad rendido}\\\hline
+		\textbf{Atributo} & \textbf{Tipo}         & \textbf{Dato} \\\hline
+		Id                & \textit{primary\_key} & \texttt{INT} \\\hline
+		Id\_actividad        & \textit{---}          & \texttt{INT} \\\hline
+		Rut\_alumno       & \textit{---}          & \texttt{INT} \\\hline
+		Resultado         & \textit{---}          & \texttt{STRING} \\\hline
+	\end{tabular}
+	&
 	\\
 \end{tabular}
 }
