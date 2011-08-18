@@ -15,7 +15,7 @@
                   Para comenzar a realizar cualquier tarea
                   es necesario <a href="login.php">autentificarse.</a><br/><br/>
 
-                  Reporte de problemas: <a href="mailto:cmaureir@csrg.cl">cmaureir@csrg.cl</a>
+                  Reporte de problemas: <b>cmaureir at csrg.cl</b>
 					</div>
 			</div>
 
