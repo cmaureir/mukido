@@ -51,6 +51,9 @@
 				isset($_POST["presidente_email"])   && $_POST["presidente_email"]  != ""
 				){
 
+				mysql_connect('mysql.mukido.cl','mukidoadmin','sky19saint')or die ('Ha fallado la conexión: '.mysql_error());
+				mysql_select_db('mukido_adm')or die ('Error al seleccionar la Base de Datos: '.mysql_error());
+
 				echo $_POST["rut"];
 			}
 			?>
