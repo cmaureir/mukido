@@ -10,13 +10,12 @@
 <link href="css/layout.css" rel="stylesheet" type="text/css" />
 <link href="css/buttons.css" rel="stylesheet" type="text/css" />
 <link href="css/login.css" rel="stylesheet" type="text/css" />
-<link href="css/datePicker.css"rel="stylesheet" type="text/css" media="screen" >
 <link rel="stylesheet" href="css/BreadCrumb.css" type="text/css">
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/date.js"></script>
-<script type="text/javascript" src="js/jquery.datePicker.js"></script>
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="js/jquery.jBreadCrumb.1.1.js" language="JavaScript"></script>
+
+<script src="js/jquery-1.6.2.js"></script>
+<script src="js/jquery.ui.core.js"></script>
+<script src="js/jquery.ui.widget.js"></script>
+<script src="js/jquery.ui.datepicker.js"></script>
 
 <script type="text/javascript">
    jQuery(document).ready(function()
@@ -24,83 +23,95 @@
          jQuery("#breadCrumb0").jBreadCrumb();
       })
 </script>
-
-<script type="text/javascript" charset="utf-8">
-    $(function()
-    {
-	$('.date-pick').datePicker({startDate:'01/01/1900'});
-    });
+<script type="text/javascript">
+$('#inputDate').DatePicker({
+   format:'m/d/Y',
+   date: $('#inputDate').val(),
+   current: $('#inputDate').val(),
+   starts: 1,
+   position: 'r',
+   onBeforeShow: function(){
+      $('#inputDate').DatePickerSetDate($('#inputDate').val(), true);
+   },
+   onChange: function(formated, dates){
+      $('#inputDate').val(formated);
+      if ($('#closeOnSelect input').attr('checked')) {
+         $('#inputDate').DatePickerHide();
+      }
+   }
+});
 </script>
 
-<style>
-a.dp-choose-date {
-    float: right;
-    width: 16px;
-    height: 16px;
-    padding: 1px -4px 1px 1px;
-    display: block;
-    margin-top: 5px;
-    margin-right: 20px;
-    text-indent: -2000px;
-    overflow: hidden;
-    background: url(images/calendar.png) no-repeat; 
-}
-a.dp-choose-date.dp-disabled {
-    background-position: 0 -40px;
-    cursor: default;
-}
+<style type="text/css" title="currentStyle">
+    @import "css/demo_table.css";
 </style>
 
-        <style type="text/css" title="currentStyle">
-            @import "css/demo_table.css";
-        </style>
+<script type="text/javascript" language="javascript" src="js/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf-8">
+    var oTable;
+    var giRedraw = false;
+    var values = new Array();
+    $(document).ready(function() {
 
-        <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
-        <script type="text/javascript" charset="utf-8">
-            var oTable;
-            var giRedraw = false;
-            var values = new Array();
-            $(document).ready(function() {
+        $('#example tr').click( function() {
+            if ( $(this).hasClass('row_selected') )
+                $(this).removeClass('row_selected');
+            else
+                $(this).addClass('row_selected');
+        } );
 
-                $('#example tr').click( function() {
-                    if ( $(this).hasClass('row_selected') )
-                        $(this).removeClass('row_selected');
-                    else
-                        $(this).addClass('row_selected');
-                } );
+        $('#example tbody td').click( function () {
+            /* Get the position of the current data from the node */
+            var aPos = oTable.fnGetPosition( this );
 
-                $('#example tbody td').click( function () {
-                    /* Get the position of the current data from the node */
-                    var aPos = oTable.fnGetPosition( this );
+            /* Get the data array for this row */
+            var aData = oTable.fnGetData( aPos[0] );
 
-                    /* Get the data array for this row */
-                    var aData = oTable.fnGetData( aPos[0] );
+            /* Update the data array and return the value */
+            values.push(aData[0])
+        } );
+        /* Init the table */
+        oTable = $('#example').dataTable( );
+    } );
 
-                    /* Update the data array and return the value */
-                    values.push(aData[0])
-                } );
-                /* Init the table */
-                oTable = $('#example').dataTable( );
-            } );
-
-            function fnGetSelected( oTableLocal )
+    function fnGetSelected( oTableLocal )
+    {
+        var aReturn = new Array();
+        var aTrs = oTableLocal.fnGetNodes();
+        for ( var i=0 ; i<aTrs.length ; i++ )
+        {
+            if ( $(aTrs[i]).hasClass('row_selected') )
             {
-                var aReturn = new Array();
-                var aTrs = oTableLocal.fnGetNodes();
-                for ( var i=0 ; i<aTrs.length ; i++ )
-                {
-                    if ( $(aTrs[i]).hasClass('row_selected') )
-                    {
-                        aReturn.push( aTrs[i] );
-                    }
-                }
-                return aReturn;
+                aReturn.push( aTrs[i] );
             }
+        }
+        return aReturn;
+    }
 
-        </script>
+</script>
 
+<SCRIPT LANGUAGE="JavaScript">
+ $(document).ready(function(){
+ $("#old").click(function(){
+    $("#apoderado").attr("disabled",true);
+    $("#apoderado_rut").attr("disabled",true);
+    $("#apoderado_telefono").attr("disabled",true);
+    $("#apoderado_email").attr("disabled",true);
+    $("#apoderado-select").attr("disabled",false);
+ });
 
+ $("#new").click(function(){
+    $("#apoderado").attr("disabled",false);
+    $("#apoderado_rut").attr("disabled",false);
+    $("#apoderado_telefono").attr("disabled",false);
+    $("#apoderado_email").attr("disabled",false);
+    $("#apoderado-select").attr("disabled",true);
+ });
+
+ });
+
+</SCRIPT>
 <script type="text/javascript">
 $(document).ready(function() {
    $(".hideit").click(function() {
@@ -110,10 +121,21 @@ $(document).ready(function() {
 });
 </script>
 
+<?php
+//Convierte fecha MySQL to CLT
+function mysql_to_clt($fecha){
+    preg_match('/([0-9]{2,4})-([0-9]{1,2})-([0-9]{1,2})/', $fecha, $mifecha);
+    $lafecha=$mifecha[3]."/".$mifecha[2]."/".$mifecha[1];
+    return $lafecha;
+}
 
-<!--[if lt IE 7]>
-    <link href="css/ie_style.css" rel="stylesheet" type="text/css" />
-<![endif]-->
+//Convierte fecha CLT to MySQL
+function clt_to_mysql($fecha){
+    preg_match('/([0-9]{1,2})-([0-9]{1,2})-([0-9]{2,4})/', $fecha, $mifecha);
+    $lafecha=$mifecha[3]."-".$mifecha[2]."-".$mifecha[1];
+    return $lafecha;
+}
+?>
 
 <?php
 error_reporting(E_ALL);
@@ -139,13 +161,9 @@ require_once("functions.php");
         echo "<a href=\"login.php\">Login</a>";
     }
 ?>
-	</p>
-      <!-- .logo -->
-
+   </p>
       <div class="logo">
-		<a href="index.php"><img src="images/logo1.png" alt="logo" /></a>
-      	<h1>Mu Ki Do</h1>
+         <a href="index.php"><img src="images/logo1.png" alt="logo" /></a>
+         <h1>Mu Ki Do</h1>
       </div>
-      <!-- /.logo -->
     </div>
-    <!-- /header -->
