@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -30,22 +31,23 @@
 	$('.date-pick').datePicker({startDate:'01/01/1900'});
     });
 </script>
+
 <style>
 a.dp-choose-date {
-	float: right;
-	width: 16px;
-	height: 16px;
-	padding: 1px -4px 1px 1px;
-	display: block;
-   margin-top: 5px;
-   margin-right: 20px;
-	text-indent: -2000px;
-	overflow: hidden;
-	background: url(images/calendar.png) no-repeat; 
+    float: right;
+    width: 16px;
+    height: 16px;
+    padding: 1px -4px 1px 1px;
+    display: block;
+    margin-top: 5px;
+    margin-right: 20px;
+    text-indent: -2000px;
+    overflow: hidden;
+    background: url(images/calendar.png) no-repeat; 
 }
 a.dp-choose-date.dp-disabled {
-	background-position: 0 -40px;
-	cursor: default;
+    background-position: 0 -40px;
+    cursor: default;
 }
 </style>
 
@@ -59,7 +61,6 @@ a.dp-choose-date.dp-disabled {
             var oTable;
             var giRedraw = false;
             var values = new Array();
-            
             $(document).ready(function() {
 
                 $('#example tr').click( function() {
@@ -82,13 +83,11 @@ a.dp-choose-date.dp-disabled {
                 /* Init the table */
                 oTable = $('#example').dataTable( );
             } );
-            
 
             function fnGetSelected( oTableLocal )
             {
                 var aReturn = new Array();
                 var aTrs = oTableLocal.fnGetNodes();
-                
                 for ( var i=0 ; i<aTrs.length ; i++ )
                 {
                     if ( $(aTrs[i]).hasClass('row_selected') )
@@ -102,13 +101,20 @@ a.dp-choose-date.dp-disabled {
         </script>
 
 
+<script type="text/javascript">
+$(document).ready(function() {
+   $(".hideit").click(function() {
+      $(this).fadeOut(700);
+   });
 
-
+});
+</script>
 
 
 <!--[if lt IE 7]>
-	<link href="css/ie_style.css" rel="stylesheet" type="text/css" />
+    <link href="css/ie_style.css" rel="stylesheet" type="text/css" />
 <![endif]-->
+
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
@@ -121,15 +127,17 @@ require_once("functions.php");
 
     <!-- header -->
     <div id="header">
-	<p align="right">
-	<?php session_start();
-	echo 'Bienvenido, ';
-	if (isset($_SESSION['username'])) {
-		echo "<b>".$_SESSION["username"]."</b>.";
-		echo "<a href=\"logout.php\">Logout</a>";
-	}else{
-		echo "<a href=\"login.php\">Login</a>";
-	}
+    <p align="right">
+    <?php
+        // session_start();
+        echo 'Bienvenido, ';
+    if (isset($_SESSION['username'])) {
+        echo "<b>".$_SESSION["username"]."</b>.";
+        echo "<a href=\"logout.php\">Logout</a>";
+    }
+    else{
+        echo "<a href=\"login.php\">Login</a>";
+    }
 ?>
 	</p>
       <!-- .logo -->
