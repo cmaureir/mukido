@@ -1,21 +1,24 @@
+SET foreign_key_checks = 0;
 -- DROP TABLE administrador;
--- DROP TABLE alumno;
--- DROP TABLE apoderado;
--- DROP TABLE club;
--- DROP TABLE cuota;
--- DROP TABLE campeonato;
--- DROP TABLE campeonato_rendido;
--- DROP TABLE examen;
--- DROP TABLE examen_rendido;
--- DROP TABLE actividad;
--- DROP TABLE actividad_rendida;
+DROP TABLE IF EXISTS alumno;
+DROP TABLE IF EXISTS apoderado;
+DROP TABLE IF EXISTS club;
+DROP TABLE IF EXISTS cuota;
+DROP TABLE IF EXISTS campeonato;
+DROP TABLE IF EXISTS campeonato_rendido;
+DROP TABLE IF EXISTS examen;
+DROP TABLE IF EXISTS examen_rendido;
+DROP TABLE IF EXISTS actividad;
+DROP TABLE IF EXISTS actividad_rendida;
 
-CREATE TABLE administrador (
-rut INTEGER NOT NULL,
-username VARCHAR(100) NOT NULL,
-password VARCHAR(50) NOT NULL,
-PRIMARY KEY (rut)
-);
+-- CREATE TABLE administrador (
+-- rut INTEGER NOT NULL,
+-- username VARCHAR(100) NOT NULL,
+-- password VARCHAR(50) NOT NULL,
+-- PRIMARY KEY (rut)
+-- );
+
+-- insert into administrador (rut,username,password) values (167593526,'cmaureir','lala');
 
 CREATE TABLE alumno (
 rut	INTEGER NOT NULL,
@@ -61,7 +64,6 @@ presidente VARCHAR(100),
 rut_presidente INTEGER,
 domicilio_presidente VARCHAR(100),
 telefono INTEGER,
-celular	INTEGER,
 email VARCHAR(100),
 PRIMARY KEY (rut_club)
 );
@@ -144,3 +146,4 @@ PRIMARY KEY (id_act_rendida),
 FOREIGN KEY (act_id) REFERENCES actividad(id_actividad),
 FOREIGN KEY (rut_alumno) REFERENCES alumno(rut)
 );
+SET foreign_key_checks = 1;
