@@ -114,13 +114,13 @@ PRIMARY KEY (id_examen)
 );
 
 CREATE TABLE examen_rendido (
-id_examen_rendido INTEGER NOT NULL AUTO_INCREMENT,         
+id_examen_rendido INTEGER NOT NULL AUTO_INCREMENT,
 examen_id INTEGER NOT NULL,
 rut_alumno INTEGER NOT NULL,
-resultado VARCHAR(100) NOT NULL, 
-monto  INTEGER NOT NULL,    
-pagado BOOL NOT NULL,    
-f_pago DATE,   
+resultado VARCHAR(100) NOT NULL,
+monto  INTEGER NOT NULL,
+pagado BOOL NOT NULL,
+f_pago DATE,
 comentario VARCHAR(200),
 PRIMARY KEY (id_examen_rendido),
 FOREIGN KEY (examen_id) REFERENCES examen(id_examen),
@@ -130,9 +130,10 @@ FOREIGN KEY (rut_alumno) REFERENCES alumno(rut)
 
 CREATE TABLE actividad (
 id_actividad INTEGER NOT NULL AUTO_INCREMENT,
-f_actividad DATE NOT NULL,	 	 
+f_actividad DATE NOT NULL,
 ciudad VARCHAR(100) NOT NULL,
-descripcion	 VARCHAR(100) NOT NULL,
+lugar VARCHAR(100),
+descripcion VARCHAR(100) NOT NULL,
 instructor VARCHAR(100) NOT NULL,
 PRIMARY KEY (id_actividad)
 );
