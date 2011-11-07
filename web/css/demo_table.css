@@ -26,78 +26,76 @@
  *     ../../images/ - relative to this CSS file.
  */
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * DataTables features
- */
+/* DataTables features */
 
 .dataTables_wrapper {
-	position: relative;
-	min-height: 302px;
-	clear: both;
-	_height: 302px;
-	zoom: 1; /* Feeling sorry for IE */
+   position: relative;
+   min-height: 302px;
+   clear: both;
+   _height: 302px;
+   zoom: 1; /* Feeling sorry for IE */
 }
 
 .dataTables_processing {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 250px;
-	height: 30px;
-	margin-left: -125px;
-	margin-top: -15px;
-	padding: 14px 0 2px 0;
-	border: 1px solid #ddd;
-	text-align: center;
-	color: #999;
-	font-size: 14px;
-	background-color: white;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 250px;
+   height: 30px;
+   margin-left: -125px;
+   margin-top: -15px;
+   padding: 14px 0 2px 0;
+   border: 1px solid #ddd;
+   text-align: center;
+   color: #999;
+   font-size: 14px;
+   background-color: white;
 }
 
 .dataTables_length {
-	width: 40%;
-	float: left;
+   width: 40%;
+   float: left;
 }
 
 .dataTables_filter {
-	width: 57%;
-	float: left;
-	text-align: right;
+   width: 57%;
+   float: left;
+   text-align: right;
 }
 
 .dataTables_info {
-	width: 60%;
-	float: left;
+   width: 60%;
+   float: left;
 }
 
 .dataTables_paginate {
-	width: 64px;
-	float: right;
-	text-align: right;
+   width: 64px;
+   float: right;
+   text-align: right;
 }
 
 /* Pagination nested */
 .paginate_disabled_previous, .paginate_enabled_previous, .paginate_disabled_next, .paginate_enabled_next {
-	height: 19px;
-	width: 19px;
+   height: 19px;
+   width: 19px;
    margin-left: 3px;
-	float: left;
+   float: left;
 }
 
 .paginate_disabled_previous {
-	background-image: url('../images/back_disabled.jpg');
+   background-image: url('../images/back_disabled.jpg');
 }
 
 .paginate_enabled_previous {
-	background-image: url('../images/back_enabled.jpg');
+   background-image: url('../images/back_enabled.jpg');
 }
 
 .paginate_disabled_next {
-	background-image: url('../images/forward_disabled.jpg');
+   background-image: url('../images/forward_disabled.jpg');
 }
 
 .paginate_enabled_next {
-	background-image: url('../images/forward_enabled.jpg');
+   background-image: url('../images/forward_enabled.jpg');
 }
 
 
@@ -106,48 +104,48 @@
  * DataTables display
  */
 #cuota-column table.display {
-	margin: 0 auto;
-	clear: both;
-	width: 95%;
-	
-	/* Note Firefox 3.5 and before have a bug with border-collapse
-	 * ( https://bugzilla.mozilla.org/show%5Fbug.cgi?id=155955 ) 
-	 * border-spacing: 0; is one possible option. Conditional-css.com is
-	 * useful for this kind of thing
-	 *
-	 * Further note IE 6/7 has problems when calculating widths with border width.
-	 * It subtracts one px relative to the other browsers from the first column, and
-	 * adds one to the end...
-	 *
-	 * If you want that effect I'd suggest setting a border-top/left on th/td's and 
-	 * then filling in the gaps with other borders.
-	 */
+   margin: 0 auto;
+   clear: both;
+   width: 95%;
+   
+   /* Note Firefox 3.5 and before have a bug with border-collapse
+    * ( https://bugzilla.mozilla.org/show%5Fbug.cgi?id=155955 ) 
+    * border-spacing: 0; is one possible option. Conditional-css.com is
+    * useful for this kind of thing
+    *
+    * Further note IE 6/7 has problems when calculating widths with border width.
+    * It subtracts one px relative to the other browsers from the first column, and
+    * adds one to the end...
+    *
+    * If you want that effect I'd suggest setting a border-top/left on th/td's and 
+    * then filling in the gaps with other borders.
+    */
 }
 
 #cuota-column table.display thead th {
-	padding: 3px 18px 3px 10px;
-	border-bottom: 1px solid black;
-	font-weight: bold;
-	cursor: pointer;
-	* cursor: hand;
+   padding: 3px 18px 3px 10px;
+   border-bottom: 1px solid black;
+   font-weight: bold;
+   cursor: pointer;
+   * cursor: hand;
 }
 
 #cuota-column table.display tfoot th {
-	padding: 3px 18px 3px 10px;
-	border-top: 1px solid black;
-	font-weight: bold;
+   padding: 3px 18px 3px 10px;
+   border-top: 1px solid black;
+   font-weight: bold;
 }
 
 #cuota-column table.display tr.heading2 td {
-	border-bottom: 1px solid #aaa;
+   border-bottom: 1px solid #aaa;
 }
 
 #cuota-column table.display td {
-	padding: 3px 10px;
+   padding: 3px 10px;
 }
 
 #cuota-column table.display td.center {
-	text-align: center;
+   text-align: center;
 }
 
 
@@ -157,23 +155,23 @@
  */
 
 .sorting_asc {
-	background: url('../images/sort_asc.png') no-repeat center right;
+   background: url('../images/sort_asc.png') no-repeat center right;
 }
 
 .sorting_desc {
-	background: url('../images/sort_desc.png') no-repeat center right;
+   background: url('../images/sort_desc.png') no-repeat center right;
 }
 
 .sorting {
-	background: url('../images/sort_both.png') no-repeat center right;
+   background: url('../images/sort_both.png') no-repeat center right;
 }
 
 .sorting_asc_disabled {
-	background: url('../images/sort_asc_disabled.png') no-repeat center right;
+   background: url('../images/sort_asc_disabled.png') no-repeat center right;
 }
 
 .sorting_desc_disabled {
-	background: url('../images/sort_desc_disabled.png') no-repeat center right;
+   background: url('../images/sort_desc_disabled.png') no-repeat center right;
 }
 
 
@@ -184,44 +182,44 @@
  * DataTables row classes
  */
 #cuota-column table.display tr.odd.gradeA {
-	background-color: #ddffdd;
+   background-color: #ddffdd;
 }
 
 #cuota-column table.display tr.even.gradeA {
-	background-color: #eeffee;
+   background-color: #eeffee;
 }
 
 #cuota-column table.display tr.odd.gradeC {
-	background-color: #ddddff;
+   background-color: #ddddff;
 }
 
 #cuota-column table.display tr.even.gradeC {
-	background-color: #eeeeff;
+   background-color: #eeeeff;
 }
 
 #cuota-column table.display tr.odd.gradeX {
-	background-color: #ffdddd;
+   background-color: #ffdddd;
 }
 
 #cuota-column table.display tr.even.gradeX {
-	background-color: #ffeeee;
+   background-color: #ffeeee;
 }
 
 #cuota-column table.display tr.odd.gradeU {
-	background-color: #ddd;
+   background-color: #ddd;
 }
 
 #cuota-column table.display tr.even.gradeU {
-	background-color: #eee;
+   background-color: #eee;
 }
 
 
 #cuota-column tr.odd {
-	background-color: #E2E4FF;
+   background-color: #E2E4FF;
 }
 
 #cuota-column tr.even {
-	background-color: white;
+   background-color: white;
 }
 
 
@@ -232,92 +230,92 @@
  * Misc
  */
 .dataTables_scroll {
-	clear: both;
+   clear: both;
 }
 
 .dataTables_scrollBody {
-	*margin-top: -1px;
+   *margin-top: -1px;
 }
 
 .top, .bottom {
-	padding: 15px;
-	background-color: #F5F5F5;
-	border: 1px solid #CCCCCC;
+   padding: 15px;
+   background-color: #F5F5F5;
+   border: 1px solid #CCCCCC;
 }
 
 .top .dataTables_info {
-	float: none;
+   float: none;
 }
 
 .clear {
-	clear: both;
+   clear: both;
 }
 
 .dataTables_empty {
-	text-align: center;
+   text-align: center;
 }
 
 #cuota-column tfoot input {
-	margin: 0.5em 0;
-	width: 95%;
-	color: #444;
+   margin: 0.5em 0;
+   width: 95%;
+   color: #444;
 }
 
 #cuota-column tfoot input.search_init {
-	color: #999;
+   color: #999;
 }
 
 #cuota-column td.group {
-	background-color: #d1cfd0;
-	border-bottom: 2px solid #A19B9E;
-	border-top: 2px solid #A19B9E;
+   background-color: #d1cfd0;
+   border-bottom: 2px solid #A19B9E;
+   border-top: 2px solid #A19B9E;
 }
 
 #cuota-column td.details {
-	background-color: #d1cfd0;
-	border: 2px solid #A19B9E;
+   background-color: #d1cfd0;
+   border: 2px solid #A19B9E;
 }
 
 
 .example_alt_pagination div.dataTables_info {
-	width: 40%;
+   width: 40%;
 }
 
 .paging_full_numbers {
-	width: 400px;
-	height: 22px;
-	line-height: 22px;
+   width: 400px;
+   height: 22px;
+   line-height: 22px;
 }
 
 .paging_full_numbers span.paginate_button,
- 	.paging_full_numbers span.paginate_active {
-	border: 1px solid #aaa;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	padding: 2px 5px;
-	margin: 0 3px;
-	cursor: pointer;
-	*cursor: hand;
+    .paging_full_numbers span.paginate_active {
+   border: 1px solid #aaa;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   padding: 2px 5px;
+   margin: 0 3px;
+   cursor: pointer;
+   *cursor: hand;
 }
 
 .paging_full_numbers span.paginate_button {
-	background-color: #ddd;
+   background-color: #ddd;
 }
 
 .paging_full_numbers span.paginate_button:hover {
-	background-color: #ccc;
+   background-color: #ccc;
 }
 
 .paging_full_numbers span.paginate_active {
-	background-color: #99B3FF;
+   background-color: #99B3FF;
 }
 
 #cuota-column table.display tr.even.row_selected td {
-	background-color: #B0BED9;
+   background-color: #B0BED9;
 }
 
 #cuota-column table.display tr.odd.row_selected td {
-	background-color: #9FAFD1;
+   background-color: #9FAFD1;
 }
 
 
@@ -326,134 +324,134 @@
  */
 /* For the standard odd/even */
 #cuota-column tr.odd td.sorting_1 {
-	background-color: #D3D6FF;
+   background-color: #D3D6FF;
 }
 
 #cuota-column tr.odd td.sorting_2 {
-	background-color: #DADCFF;
+   background-color: #DADCFF;
 }
 
 #cuota-column tr.odd td.sorting_3 {
-	background-color: #E0E2FF;
+   background-color: #E0E2FF;
 }
 
 #cuota-column tr.even td.sorting_1 {
-	background-color: #EAEBFF;
+   background-color: #EAEBFF;
 }
 
 #cuota-column tr.even td.sorting_2 {
-	background-color: #F2F3FF;
+   background-color: #F2F3FF;
 }
 
 #cuota-column tr.even td.sorting_3 {
-	background-color: #F9F9FF;
+   background-color: #F9F9FF;
 }
 
 
 /* For the Conditional-CSS grading rows */
 /*
- 	Colour calculations (based off the main row colours)
+    Colour calculations (based off the main row colours)
   Level 1:
-		dd > c4
-		ee > d5
-	Level 2:
-	  dd > d1
-	  ee > e2
+      dd > c4
+      ee > d5
+   Level 2:
+     dd > d1
+     ee > e2
  */
 #cuota-column tr.odd.gradeA td.sorting_1 {
-	background-color: #c4ffc4;
+   background-color: #c4ffc4;
 }
 
 #cuota-column tr.odd.gradeA td.sorting_2 {
-	background-color: #d1ffd1;
+   background-color: #d1ffd1;
 }
 
 #cuota-column tr.odd.gradeA td.sorting_3 {
-	background-color: #d1ffd1;
+   background-color: #d1ffd1;
 }
 
 #cuota-column tr.even.gradeA td.sorting_1 {
-	background-color: #d5ffd5;
+   background-color: #d5ffd5;
 }
 
 #cuota-column tr.even.gradeA td.sorting_2 {
-	background-color: #e2ffe2;
+   background-color: #e2ffe2;
 }
 
 #cuota-column tr.even.gradeA td.sorting_3 {
-	background-color: #e2ffe2;
+   background-color: #e2ffe2;
 }
 
 #cuota-column tr.odd.gradeC td.sorting_1 {
-	background-color: #c4c4ff;
+   background-color: #c4c4ff;
 }
 
 #cuota-column tr.odd.gradeC td.sorting_2 {
-	background-color: #d1d1ff;
+   background-color: #d1d1ff;
 }
 
 #cuota-column tr.odd.gradeC td.sorting_3 {
-	background-color: #d1d1ff;
+   background-color: #d1d1ff;
 }
 
 #cuota-column tr.even.gradeC td.sorting_1 {
-	background-color: #d5d5ff;
+   background-color: #d5d5ff;
 }
 
 #cuota-column tr.even.gradeC td.sorting_2 {
-	background-color: #e2e2ff;
+   background-color: #e2e2ff;
 }
 
 #cuota-column tr.even.gradeC td.sorting_3 {
-	background-color: #e2e2ff;
+   background-color: #e2e2ff;
 }
 
 #cuota-column tr.odd.gradeX td.sorting_1 {
-	background-color: #ffc4c4;
+   background-color: #ffc4c4;
 }
 
 #cuota-column tr.odd.gradeX td.sorting_2 {
-	background-color: #ffd1d1;
+   background-color: #ffd1d1;
 }
 
 #cuota-column tr.odd.gradeX td.sorting_3 {
-	background-color: #ffd1d1;
+   background-color: #ffd1d1;
 }
 
 #cuota-column tr.even.gradeX td.sorting_1 {
-	background-color: #ffd5d5;
+   background-color: #ffd5d5;
 }
 
 #cuota-column tr.even.gradeX td.sorting_2 {
-	background-color: #ffe2e2;
+   background-color: #ffe2e2;
 }
 
 #cuota-column tr.even.gradeX td.sorting_3 {
-	background-color: #ffe2e2;
+   background-color: #ffe2e2;
 }
 
 #cuota-column tr.odd.gradeU td.sorting_1 {
-	background-color: #c4c4c4;
+   background-color: #c4c4c4;
 }
 
 #cuota-column tr.odd.gradeU td.sorting_2 {
-	background-color: #d1d1d1;
+   background-color: #d1d1d1;
 }
 
 #cuota-column tr.odd.gradeU td.sorting_3 {
-	background-color: #d1d1d1;
+   background-color: #d1d1d1;
 }
 
 #cuota-column tr.even.gradeU td.sorting_1 {
-	background-color: #d5d5d5;
+   background-color: #d5d5d5;
 }
 
 #cuota-column tr.even.gradeU td.sorting_2 {
-	background-color: #e2e2e2;
+   background-color: #e2e2e2;
 }
 
 #cuota-column tr.even.gradeU td.sorting_3 {
-	background-color: #e2e2e2;
+   background-color: #e2e2e2;
 }
 
 
@@ -461,43 +459,43 @@
  * Row highlighting example
  */
 .ex_highlight #example tbody tr.even:hover, #example tbody tr.even td.highlighted {
-	background-color: #ECFFB3;
+   background-color: #ECFFB3;
 }
 
 .ex_highlight #example tbody tr.odd:hover, #example tbody tr.odd td.highlighted {
-	background-color: #E6FF99;
+   background-color: #E6FF99;
 }
 
 .ex_highlight_row #example tr.even:hover {
-	background-color: #ECFFB3;
+   background-color: #ECFFB3;
 }
 
 .ex_highlight_row #example tr.even:hover td.sorting_1 {
-	background-color: #DDFF75;
+   background-color: #DDFF75;
 }
 
 .ex_highlight_row #example tr.even:hover td.sorting_2 {
-	background-color: #E7FF9E;
+   background-color: #E7FF9E;
 }
 
 .ex_highlight_row #example tr.even:hover td.sorting_3 {
-	background-color: #E2FF89;
+   background-color: #E2FF89;
 }
 
 .ex_highlight_row #example tr.odd:hover {
-	background-color: #E6FF99;
+   background-color: #E6FF99;
 }
 
 .ex_highlight_row #example tr.odd:hover td.sorting_1 {
-	background-color: #D6FF5C;
+   background-color: #D6FF5C;
 }
 
 .ex_highlight_row #example tr.odd:hover td.sorting_2 {
-	background-color: #E0FF84;
+   background-color: #E0FF84;
 }
 
 .ex_highlight_row #example tr.odd:hover td.sorting_3 {
-	background-color: #DBFF70;
+   background-color: #DBFF70;
 }
 
 
@@ -505,33 +503,33 @@
  * KeyTable
  */
 #cuota-column table.KeyTable td {
-	border: 3px solid transparent;
+   border: 3px solid transparent;
 }
 
 #cuota-column table.KeyTable td.focus {
-	border: 3px solid #3366FF;
+   border: 3px solid #3366FF;
 }
 
 #cuota-column table.display tr.gradeA {
-	background-color: #eeffee;
+   background-color: #eeffee;
 }
 
 #cuota-column table.display tr.gradeC {
-	background-color: #ddddff;
+   background-color: #ddddff;
 }
 
 #cuota-column table.display tr.gradeX {
-	background-color: #ffdddd;
+   background-color: #ffdddd;
 }
 
 #cuota-column table.display tr.gradeU {
-	background-color: #ddd;
+   background-color: #ddd;
 }
 
 #cuota-column div.box {
-	height: 100px;
-	padding: 10px;
-	overflow: auto;
-	border: 1px solid #8080FF;
-	background-color: #E5E5FF;
+   height: 100px;
+   padding: 10px;
+   overflow: auto;
+   border: 1px solid #8080FF;
+   background-color: #E5E5FF;
 }
