@@ -16,11 +16,7 @@
                <div class="line-hor"></div>
                <?php
                if (!isset($_SESSION['username'])) {
-                  echo"
-                     <SCRIPT LANGUAGE=\"javascript\">
-                     location.href = \"login.php\";
-                     </SCRIPT>
-                  ";
+                  echo"<SCRIPT LANGUAGE=\"javascript\">location.href = \"login.php\";</SCRIPT>";
                }
                else{
                ?>
@@ -53,8 +49,8 @@
 
                 require_once("connect.php");
                 $query = "INSERT INTO club
-                     (rut_club,razon_social,domicilio,presidente,rut_presidente,
-                      domicilio_presidente,telefono,email)
+                     (rut,razon_social,domicilio,presidente,presidente_rut,
+                      presidente_domicilio,presidente_telefono,presidente_email)
                       VALUES (".$_POST["rut"].",
                         '".$_POST["razon"]."',
                         '".$_POST["domicilio"]."',

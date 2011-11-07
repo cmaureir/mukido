@@ -39,7 +39,7 @@
 
                require_once("connect.php");
                $query = "INSERT INTO actividad
-                        (f_actividad,ciudad,lugar,descripcion,instructor)
+                        (fecha,ciudad,lugar,descripcion,instructor)
                         VALUES
                         (
                         '".clt_to_mysql($_POST["fecha"])."',

@@ -16,11 +16,7 @@
                <div class="line-hor"></div>
                <?php
                if (!isset($_SESSION['username'])) {
-                  echo"
-                  <SCRIPT LANGUAGE=\"javascript\">
-                    location.href = \"login.php\";
-                    </SCRIPT>
-                  ";
+                  echo"<SCRIPT LANGUAGE=\"javascript\">location.href = \"login.php\";</SCRIPT>";
                }
                else{?>
 
