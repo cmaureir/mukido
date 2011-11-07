@@ -21,130 +21,131 @@ DROP TABLE IF EXISTS actividad_rendida;
 -- insert into administrador (rut,username,password) values (167593526,'cmaureir','lala');
 
 CREATE TABLE alumno (
-rut	INTEGER NOT NULL,
-nombres VARCHAR(50),
-apellido_paterno VARCHAR(50),
-apellido_materno VARCHAR(50),
-sexo BOOL,
-foto VARCHAR(100),
-f_nacimiento DATE,
-f_inicio DATE,
-f_retiro DATE,
-grado INTEGER,
-peso INTEGER,
-altura INTEGER,
-direccion VARCHAR(100),
+rut INTEGER NOT NULL,
+rut_apoderado INTEGER NOT NULL,
+nombres VARCHAR(50) NOT NULL,
+apellido_paterno VARCHAR(50) NOT NULL,
+apellido_materno VARCHAR(50) NOT NULL,
+email VARCHAR(50) NOT NULL,
+actividad VARCHAR(100) NOT NULL,
+institucion VARCHAR(100) NOT NULL,
+direccion VARCHAR(100) NOT NULL,
+f_nacimiento DATE NOT NULL,
+f_inicio DATE NOT NULL,
 telefono INTEGER,
 celular INTEGER,
-actividad VARCHAR(100),
-institucion VARCHAR(100),
-email VARCHAR(50),
-vigente BOOL,
-club VARCHAR(100),
-PRIMARY KEY (rut)
+grado INTEGER NOT NULL,
+sexo BOOL NOT NULL,
+peso INTEGER,
+altura INTEGER,
+foto VARCHAR(100),
+club VARCHAR(100) NOT NULL,
+f_retiro DATE,
+vigente BOOL NOT NULL,
+PRIMARY KEY (rut),
+FOREIGN KEY (rut_apoderado) REFERENCES apoderado(rut)
 );
 
 CREATE TABLE apoderado (
-rut_apoderado INTEGER NOT NULL,
-rut_alumno INTEGER NOT NULL,
+rut INTEGER NOT NULL,
 nombre VARCHAR(100) NOT NULL,
 direccion VARCHAR(100) NOT NULL,
 telefono INTEGER NOT NULL,
-celular INTEGER NOT NULL,
 email VARCHAR(50),
-PRIMARY KEY (rut_apoderado),
-FOREIGN KEY (rut_alumno) REFERENCES alumno(rut)
+PRIMARY KEY (rut)
 );
 
 CREATE TABLE club (
-rut_club INTEGER NOT NULL,
-razon_social VARCHAR(100),
-domicilio VARCHAR(100),
-presidente VARCHAR(100),
-rut_presidente INTEGER,
-domicilio_presidente VARCHAR(100),
-telefono INTEGER,
-email VARCHAR(100),
-PRIMARY KEY (rut_club)
+rut INTEGER NOT NULL,
+razon_social VARCHAR(100) NOT NULL,
+domicilio VARCHAR(100) NOT NULL,
+presidente VARCHAR(100) NOT NULL,
+presidente_rut INTEGER NOT NULL,
+presidente_domicilio VARCHAR(100) NOT NULL,
+presidente_telefono INTEGER NOT NULL,
+presidente_email VARCHAR(100),
+PRIMARY KEY (rut)
 );
 
+insert into club (rut,razon_social,domicilio,presidente,presidente_rut,presidente_domicilio,presidente_telefono,presidente_email) values (123456789,'Mu Ki Do', 'Avenida Siempre Viva 666', 'Perico los palotes', '111111111', 'Pasaje X, numero 2', '5553000','perico@lospalotes.cl');
+
 CREATE TABLE cuota (
-id_cuota INTEGER NOT NULL AUTO_INCREMENT,
+id INTEGER NOT NULL AUTO_INCREMENT,
 rut_alumno INTEGER NOT NULL,
-mes INTEGER,
-year INTEGER,
-monto INTEGER,
-pagado BOOL,
+mes INTEGER NOT NULL,
+anio INTEGER NOT NULL,
+monto INTEGER NOT NULL,
+pagado BOOL NOT NULL,
 f_pago DATE,
 comentario VARCHAR(200),
-PRIMARY KEY (id_cuota),
+PRIMARY KEY (id),
 FOREIGN KEY (rut_alumno) REFERENCES alumno(rut)
 );
 
 CREATE TABLE campeonato (
-id_campeonato INTEGER NOT NULL AUTO_INCREMENT,
-nombre VARCHAR(100),
-f_campeonato DATE,
-ciudad VARCHAR(50),
-lugar VARCHAR (50),
-PRIMARY KEY (id_campeonato)
+id INTEGER NOT NULL AUTO_INCREMENT,
+nombre VARCHAR(100) NOT NULL,
+fecha DATE NOT NULL,
+ciudad VARCHAR(50) NOT NULL,
+lugar VARCHAR (50) NOT NULL,
+PRIMARY KEY (id)
 );
 
 CREATE TABLE campeonato_rendido (
-id_camp_rendido INTEGER NOT NULL AUTO_INCREMENT,
-camp_id INTEGER NOT NULL,
+id INTEGER NOT NULL AUTO_INCREMENT,
+id_campeonato INTEGER NOT NULL,
 rut_alumno INTEGER NOT NULL,
-participacion VARCHAR(50),
-resultado VARCHAR(50),
+participacion VARCHAR(100),
+resultado VARCHAR(100),
 comentario VARCHAR(200),
-estado BOOL,
-PRIMARY KEY (id_camp_rendido),
-FOREIGN KEY (camp_id) REFERENCES campeonato(id_campeonato),
+estado BOOL NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (id_campeonato) REFERENCES campeonato(id),
 FOREIGN KEY (rut_alumno) REFERENCES alumno(rut)
 );
 
 
 CREATE TABLE examen (
-id_examen INTEGER NOT NULL AUTO_INCREMENT,
+id INTEGER NOT NULL AUTO_INCREMENT,
 descripcion VARCHAR(200) NOT NULL,
-f_examen DATE NOT NULL,
-ciudad VARCHAR(100),
-lugar VARCHAR(100),
-PRIMARY KEY (id_examen)
+fecha DATE NOT NULL,
+ciudad VARCHAR(100) NOT NULL,
+lugar VARCHAR(100) NOT NULL,
+PRIMARY KEY (id)
 );
 
 CREATE TABLE examen_rendido (
-id_examen_rendido INTEGER NOT NULL AUTO_INCREMENT,
-examen_id INTEGER NOT NULL,
+id INTEGER NOT NULL AUTO_INCREMENT,
+id_examen INTEGER NOT NULL,
 rut_alumno INTEGER NOT NULL,
 resultado VARCHAR(100) NOT NULL,
 monto  INTEGER NOT NULL,
 pagado BOOL NOT NULL,
 f_pago DATE,
 comentario VARCHAR(200),
-PRIMARY KEY (id_examen_rendido),
-FOREIGN KEY (examen_id) REFERENCES examen(id_examen),
+PRIMARY KEY (id),
+FOREIGN KEY (id_examen) REFERENCES examen(id),
 FOREIGN KEY (rut_alumno) REFERENCES alumno(rut)
 );
 
 
 CREATE TABLE actividad (
-id_actividad INTEGER NOT NULL AUTO_INCREMENT,
-f_actividad DATE NOT NULL,
+id INTEGER NOT NULL AUTO_INCREMENT,
+fecha DATE NOT NULL,
 ciudad VARCHAR(100) NOT NULL,
 lugar VARCHAR(100),
 descripcion VARCHAR(100) NOT NULL,
 instructor VARCHAR(100) NOT NULL,
-PRIMARY KEY (id_actividad)
+PRIMARY KEY (id)
 );
 
 CREATE TABLE actividad_rendida (
-id_act_rendida INTEGER NOT NULL AUTO_INCREMENT,
-act_id INTEGER NOT NULL,
+id INTEGER NOT NULL AUTO_INCREMENT,
+id_actividad INTEGER NOT NULL,
 rut_alumno INTEGER NOT NULL,
 resultado VARCHAR(100) NOT NULL,
-PRIMARY KEY (id_act_rendida),
-FOREIGN KEY (act_id) REFERENCES actividad(id_actividad),
+PRIMARY KEY (id),
+FOREIGN KEY (id_actividad) REFERENCES actividad(id),
 FOREIGN KEY (rut_alumno) REFERENCES alumno(rut)
 );
 SET foreign_key_checks = 1;
