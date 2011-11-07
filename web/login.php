@@ -16,20 +16,16 @@ $(document).ready(function () {
 
 
    <div id="content">
-    	<div class="wrapper">
-		<?php require_once("sidebar.php"); ?>
-			<div class="mainContent">
-					<p align="center">
-						<div class="txt1">
-					<?php			
-					if (isset($_SESSION['username'])) {
-						echo"
-						<SCRIPT LANGUAGE=\"javascript\">
-        				location.href = \"index.php\";
-        				</SCRIPT>
-						";
-					}
-					else{?>
+       <div class="wrapper">
+      <?php require_once("sidebar.php"); ?>
+         <div class="mainContent">
+               <p align="center">
+                  <div class="txt1">
+               <?php
+               if (isset($_SESSION['username'])) {
+                  echo"<SCRIPT LANGUAGE=\"javascript\">location.href = \"index.php\";</SCRIPT>";
+               }
+               else{?>
                         <form action="login.php" method="post">
                           <table width="250" border="0" align="center" cellpadding="05" cellspacing="1" id="logintable">
                             <tr>
@@ -109,10 +105,10 @@ $(document).ready(function () {
 
 
  }?>
-						</div>
-					</p>
-			</div>
+                  </div>
+               </p>
+         </div>
 
-		</div>
+      </div>
     </div>
 <?php require_once("footer.php"); ?>

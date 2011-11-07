@@ -7,7 +7,6 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <link rel="SHORTCUT ICON" href="images/favicon.ico"/>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-<link href="css/layout.css" rel="stylesheet" type="text/css" />
 <link href="css/buttons.css" rel="stylesheet" type="text/css" />
 <link href="css/login.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="css/BreadCrumb.css" type="text/css">
@@ -96,7 +95,8 @@ $('#inputDate').DatePicker({
  $("#old").click(function(){
     $("#apoderado").attr("disabled",true);
     $("#apoderado_rut").attr("disabled",true);
-    $("#apoderado_telefono").attr("disabled",true);
+    $("#apoderado_tel").attr("disabled",true);
+    $("#apoderado_dir").attr("disabled",true);
     $("#apoderado_email").attr("disabled",true);
     $("#apoderado-select").attr("disabled",false);
  });
@@ -104,7 +104,8 @@ $('#inputDate').DatePicker({
  $("#new").click(function(){
     $("#apoderado").attr("disabled",false);
     $("#apoderado_rut").attr("disabled",false);
-    $("#apoderado_telefono").attr("disabled",false);
+    $("#apoderado_tel").attr("disabled",false);
+    $("#apoderado_dir").attr("disabled",false);
     $("#apoderado_email").attr("disabled",false);
     $("#apoderado-select").attr("disabled",true);
  });
