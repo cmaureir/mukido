@@ -1,5 +1,5 @@
 SET foreign_key_checks = 0;
--- DROP TABLE administrador;
+DROP TABLE administrador;
 DROP TABLE IF EXISTS alumno;
 DROP TABLE IF EXISTS apoderado;
 DROP TABLE IF EXISTS club;
@@ -11,14 +11,14 @@ DROP TABLE IF EXISTS examen_rendido;
 DROP TABLE IF EXISTS actividad;
 DROP TABLE IF EXISTS actividad_rendida;
 
--- CREATE TABLE administrador (
--- rut INTEGER NOT NULL,
--- username VARCHAR(100) NOT NULL,
--- password VARCHAR(50) NOT NULL,
--- PRIMARY KEY (rut)
--- );
+CREATE TABLE administrador (
+rut INTEGER NOT NULL,
+username VARCHAR(100) NOT NULL,
+password VARCHAR(50) NOT NULL,
+PRIMARY KEY (rut)
+);
 
--- insert into administrador (rut,username,password) values (167593526,'cmaureir','lala');
+insert into administrador (rut,username,password) values (167593526,'cmaureir','4d13fcc6eda389d4d679602171e11593eadae9b9');
 
 CREATE TABLE alumno (
 rut INTEGER NOT NULL,

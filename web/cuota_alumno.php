@@ -171,7 +171,6 @@
                             if(!$result){
                               $status = TRUE;
                             }
-                            mysql_free_result($result);
                         }
                   }
                   if(!$status){

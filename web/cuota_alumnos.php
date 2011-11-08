@@ -38,46 +38,24 @@
                             <tbody>
 
                            <?php
-                           //   require_once("connect.php");
-                           //   $query = "SELECT rut,nombres,apellido_paterno,apellido_materno FROM alumno";
-                           //   $result = mysql_query($query);
-                           //   if(mysql_num_rows($result) > 0){
-                           //      while ($row = mysql_fetch_assoc($result)) {
-                           //         $nombre = $row["apellido_paterno"]." ".$row["apellido_materno"].", ".$row["nombres"];
-                           //         echo "<option value=\"".$row["rut"]."\">".$nombre."</option>";
-                           //      }
-                           //   }
-                           //   else {
-                           //      echo "<option value=\"0\">Sin alumnos</option>";
-                           //   }
-                           //   mysql_free_result($result);
+                              require_once("connect.php");
+                              $query = "SELECT rut,nombres,apellido_paterno,apellido_materno FROM alumno;";
+                              $result = mysql_query($query);
+                              if(mysql_num_rows($result) > 0){
+                                 while ($row = mysql_fetch_assoc($result)) {
+                                    echo "
+                                        <tr class=\"gradeB\">
+                                            <td class=\"center\">".$row["rut"]."</td>
+                                            <td>".$row["apellido_paterno"]."</td>
+                                            <td>".$row["apellido_materno"]."</td>
+                                            <td>".$row["nombres"]."</td>
+                                        </tr>";
+                                 }
+                              }
+                              mysql_free_result($result);
 
                            ?>
 
-                                <tr class="gradeB">
-                                    <td class="center">1111</td>
-                                    <td>lala</td>
-                                    <td>lele</td>
-                                    <td>lili</td>
-                                </tr>
-                                <tr class="gradeB">
-                                    <td class="center">2222</td>
-                                    <td>sasa</td>
-                                    <td>sese</td>
-                                    <td>sisi</td>
-                                </tr>
-                                <tr class="gradeB">
-                                    <td class="center">3333</td>
-                                    <td>qaqa</td>
-                                    <td>qeqe</td>
-                                    <td>qiqi</td>
-                                </tr>
-                                <tr class="gradeB">
-                                    <td class="center">4444</td>
-                                    <td>rara</td>
-                                    <td>rere</td>
-                                    <td>riri</td>
-                                </tr>
                             </tbody>
                             <tfoot>
                                 <tr>
@@ -130,21 +108,24 @@
                      <div id="total-column"></div>
                      <div id="half-column"><label>Monto: </label><input type="text" name="monto" /> CLP</div>
 <!--                     <div id="submit-column"><label>&nbsp;</label><input type="submit" value="Crear"/></div>-->
-                     <input type="hidden" name="test" value="">
-                     <div id="submit-column"><label>&nbsp;</label><input type="submit" value="Crear" onClick="javascript:document.cuotas.test.value = fnGetSelected().toString();"/></div>
+                     <input type="hidden" name="ruts" value="">
+                     <div id="submit-column"><label>&nbsp;</label><input type="submit" value="Crear" onClick="javascript:document.cuotas.ruts.value = values"/></div>
                   </form>
                <?php }?>
          <?php
-         if (/*isset($_POST["alumno"]) && $_POST["alumno"] != "" &&
+         if (isset($_POST["alumno"]) && $_POST["alumno"] != "" &&
             isset($_POST["m_ini"])   && $_POST["m_ini"]  != "" &&
             isset($_POST["a_ini"])   && $_POST["a_ini"]  != "" &&
             isset($_POST["m_fin"])   && $_POST["m_fin"]  != "" &&
-            isset($_POST["a_fin"])   && $_POST["a_fin"]  != "" &&*/
+            isset($_POST["a_fin"])   && $_POST["a_fin"]  != "" &&
             isset($_POST["monto"])   && $_POST["monto"]  != ""
             ){
-            //$valor = $_POST["test"];
-            //$arrayphp = explode(',',$valor);
-            //echo $arrayphp;
+            $ruts_str = $_POST["ruts"];
+            $ruts = explode(',',$ruts_str);
+            $i = 0;
+            for ($i = 0; $i < count($ruts); $i++) {
+                // cuota_alumno.php code 
+            }
          }
          ?>
          </div>
